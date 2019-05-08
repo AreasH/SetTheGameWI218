@@ -7,8 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       >
+    
 
     <Grid>
+        
         <Label Content="This is the Menu." VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40" />
     </Grid>
 </UserControl>

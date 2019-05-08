@@ -22,7 +22,7 @@ namespace Set
             PageViewModels.Add(new GameViewModel());
 
             // Set starting page
-            CurrentPageViewModel = PageViewModels[1];
+            CurrentPageViewModel = PageViewModels[0];
         }
 
         #region Properties
@@ -33,8 +33,7 @@ namespace Set
                 if (_changePageCommand == null)
                 {
                     _changePageCommand = new DelegateCommand(
-                        p => ChangeViewModel((PageViewModel)p),
-                        p => p is PageViewModel);
+                        p => ChangeViewModel());
                 }
 
                 return _changePageCommand;
@@ -71,13 +70,9 @@ namespace Set
 
         #region Methods
 
-        private void ChangeViewModel(PageViewModel viewModel)
+        private void ChangeViewModel()
         {
-            if (!PageViewModels.Contains(viewModel))
-                PageViewModels.Add(viewModel);
-
-            CurrentPageViewModel = PageViewModels
-                .FirstOrDefault(vm => vm == viewModel);
+            CurrentPageViewModel = _currentPageViewModel == PageViewModels[0] ? PageViewModels[1] : PageViewModels[0];
         }
 
         #endregion

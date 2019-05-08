@@ -16,7 +16,12 @@
         </DataTemplate>
     </Window.Resources>
 
+    <Window.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding ChangePageCommand}"  ></KeyBinding>
+    </Window.InputBindings>
+    
     <DockPanel>
         <ContentControl Content="{Binding CurrentPageViewModel}" />
+
     </DockPanel>
 </Window>
