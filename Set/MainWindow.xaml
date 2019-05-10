@@ -17,7 +17,7 @@
     </Window.Resources>
 
     <Window.InputBindings>
-        <KeyBinding Key="Esc" Command="{Binding ChangePageCommand}"  ></KeyBinding>
+        <KeyBinding Key="Esc" Command="{Binding ChangePageToMenuShortcut}"  ></KeyBinding>
     </Window.InputBindings>
     
     <DockPanel>

@@ -11,6 +11,33 @@ namespace Set
     /// </summary>
     class MenuViewModel: PageViewModel
     {
+        public MenuViewModel(MainWindowViewModel mainwindow)
+        {
+            mwvm = mainwindow;
+        }
+
+        #region Fields
+        MainWindowViewModel mwvm;
+        #endregion
+        /// <summary>
+        /// This region is used for all the bindings in the view.
+        /// </summary>
+        #region Properties 
+        public DelegateCommand StartNewGameCommand
+        {
+            get { return new DelegateCommand(param => StartNewGame()); }
+        }
+
+
+        #endregion 
+
+        #region Methods
+        public void StartNewGame()
+        {
+            mwvm.ChangePageToGame();
+        }
+        #endregion
+
 
     }
 }

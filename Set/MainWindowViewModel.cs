@@ -18,22 +18,22 @@ namespace Set
         public MainWindowViewModel()
         {
             // Add available pages
-            PageViewModels.Add(new MenuViewModel());
-            PageViewModels.Add(new GameViewModel());
+            PageViewModels.Add(new MenuViewModel(this));
+            PageViewModels.Add(new GameViewModel(this));
 
             // Set starting page
             CurrentPageViewModel = PageViewModels[0];
         }
 
         #region Properties
-        public DelegateCommand ChangePageCommand
+        public DelegateCommand ChangePageToMenuShortcut
         {
             get
             {
                 if (_changePageCommand == null)
                 {
                     _changePageCommand = new DelegateCommand(
-                        p => ChangeViewModel());
+                        p => ChangePageToMenu());
                 }
 
                 return _changePageCommand;
@@ -70,11 +70,16 @@ namespace Set
 
         #region Methods
 
-        private void ChangeViewModel()
+
+        public void ChangePageToGame()
         {
-            CurrentPageViewModel = _currentPageViewModel == PageViewModels[0] ? PageViewModels[1] : PageViewModels[0];
+            CurrentPageViewModel = PageViewModels[1];
         }
 
+        public void ChangePageToMenu()
+        {
+            CurrentPageViewModel = PageViewModels[0];
+        }
         #endregion
     }
 

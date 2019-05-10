@@ -9,8 +9,14 @@
       >
     
 
-    <Grid>
+    <Grid Background="Aqua">
         
-        <Label Content="This is the Menu." VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40" />
+        <Label Content="This is the Menu."  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40" />
+        <Button Content="Zum Spiel" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                
+                Command="{Binding StartNewGameCommand}"
+                />
     </Grid>
 </UserControl>

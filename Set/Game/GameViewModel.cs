@@ -11,6 +11,13 @@ namespace Set
     /// </summary>
     class GameViewModel: PageViewModel
     {
+        public GameViewModel(MainWindowViewModel mainwindow)
+        {
+            mwvm = mainwindow;
+        }
 
+        #region Fields
+        MainWindowViewModel mwvm;
+        #endregion
     }
 }
