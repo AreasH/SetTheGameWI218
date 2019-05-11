@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Set {
+namespace Set
+{
 
     class Game
     {
-        Set<Card> AllCards;
-        Set<Card> Playset;
-        Set<Card> foundSets;
-        Set<Card> removedCards;
+        HashSet<Card> AllCards;
+        HashSet<Card> Playset;
+        HashSet<Card> foundSets;
+        HashSet<Card> removedCards;
         List<Card> setCards;
         int NumberOfPossibleSets;
         int CountSelectedCards = 0;
