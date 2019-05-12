@@ -9,14 +9,21 @@ namespace Set
     class Card
 
     {
-        String shape;
-        String color;
-        String filling;
-        String numberOfObjects;
-        Boolean selected;
-        String imageSource;
+        private string shape;
+        private string color;
+        private string filling;
+        private string numberOfObjects;
+        private bool selected;
+        private string imageSource;
 
-
+        #region Properties
+        public string ImageSource { get => imageSource; set => imageSource = value; }
+        public string Shape { get => shape; set => shape = value; }
+        public string Color { get => color; set => color = value; }
+        public string Filling { get => filling; set => filling = value; }
+        public string NumberOfObjects { get => numberOfObjects; set => numberOfObjects = value; }
+        public bool Selected { get => selected; set => selected = value; }
+        #endregion
     }
 
 }

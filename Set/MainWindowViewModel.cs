@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Set
 {
-    class MainWindowViewModel: ObservableObject
+    class MainWindowViewModel: ObservableObject, PageViewModel
     {
 
         private DelegateCommand _changePageCommand;
