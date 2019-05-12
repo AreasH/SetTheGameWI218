@@ -7,16 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       >
-    
 
-    <Grid Background="Aqua">
-        
-        <Label Content="This is the Menu."  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40" />
-        <Button Content="Zum Spiel" 
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                
-                Command="{Binding StartNewGameCommand}"
-                />
-    </Grid>
+
+  <Grid>
+    <Button Content="Neues Spiel" Height="100" Margin="69,206,0,0" VerticalAlignment="Top" Width="320"/>
+    <Button Content="Optionen" Height="98" Margin="69,350,0,0" VerticalAlignment="Top" Width="320"/>
+    <Button Content="Regeln" Height="98" Margin="69,500,0,0" VerticalAlignment="Top" Width="320"/>
+    <Button Content="Spiel verlassen" Height="98" Margin="69,654,0,0" VerticalAlignment="Top" Width="320"/>
+
+  </Grid>
 </UserControl>
