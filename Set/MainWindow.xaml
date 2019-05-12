@@ -14,6 +14,9 @@
         <DataTemplate  DataType="{x:Type local:GameViewModel}">
             <local:GameView/>
         </DataTemplate>
+        <DataTemplate  DataType="{x:Type local:OptionsViewModel}">
+            <local:OptionsView/>
+        </DataTemplate>
     </Window.Resources>
 
     <Window.InputBindings>
