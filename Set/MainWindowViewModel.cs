@@ -11,7 +11,7 @@ namespace Set
     {
 
         private DelegateCommand _changePageCommand;
-
+        private string name = "MainWindowViewModel";
         private PageViewModel _currentPageViewModel;
         private List<PageViewModel> _pageViewModels;
 
@@ -20,12 +20,21 @@ namespace Set
             // Add available pages
             PageViewModels.Add(new MenuViewModel(this));
             PageViewModels.Add(new GameViewModel(this));
+            PageViewModels.Add(new OptionsViewModel(this));
+            PageViewModels.Add(new RulesViewModel(this));
 
             // Set starting page
             CurrentPageViewModel = PageViewModels[0];
         }
 
+
+
         #region Properties
+        public string Name
+        {
+            get {return name; }
+        }
+
         public DelegateCommand ChangePageToMenuShortcut
         {
             get
@@ -33,13 +42,54 @@ namespace Set
                 if (_changePageCommand == null)
                 {
                     _changePageCommand = new DelegateCommand(
-                        p => ChangePageToMenu());
+                        p => ChangePageTo("MenuViewModel"));
                 }
 
                 return _changePageCommand;
             }
         }
 
+        public DelegateCommand ChangePageToGameShortcut
+        {
+            get
+            {
+                if (_changePageCommand == null)
+                {
+                    _changePageCommand = new DelegateCommand(
+                        p => ChangePageTo("GameViewModel"));
+                }
+
+                return _changePageCommand;
+            }
+        }
+
+        public DelegateCommand ChangePageToRulesShortcut
+        {
+            get
+            {
+                if (_changePageCommand == null)
+                {
+                    _changePageCommand = new DelegateCommand(
+                        p => ChangePageTo("RulesViewModel"));
+                }
+
+                return _changePageCommand;
+            }
+        }
+
+        public DelegateCommand ChangePageToOptionsShortcut
+        {
+            get
+            {
+                if (_changePageCommand == null)
+                {
+                    _changePageCommand = new DelegateCommand(
+                        p => ChangePageTo("OptionsViewModel"));
+                }
+
+                return _changePageCommand;
+            }
+        }
         public List<PageViewModel> PageViewModels
         {
             get
@@ -71,14 +121,16 @@ namespace Set
         #region Methods
 
 
-        public void ChangePageToGame()
-        {
-            CurrentPageViewModel = PageViewModels[1];
-        }
 
-        public void ChangePageToMenu()
+        public void ChangePageTo(string name)
         {
-            CurrentPageViewModel = PageViewModels[0];
+            foreach(PageViewModel page in PageViewModels)
+            {
+                if(name == page.Name)
+                {
+                    CurrentPageViewModel = page;
+                }
+            }
         }
         #endregion
     }

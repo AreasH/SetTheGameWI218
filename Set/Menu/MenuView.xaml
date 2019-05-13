@@ -27,10 +27,10 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Content="Neues Spiel" Grid.Row="0"  VerticalAlignment="Stretch" />
-            <Button Content="Optionen" Grid.Row="1" VerticalAlignment="Stretch"/>
-            <Button Content="Regeln" Grid.Row="2" VerticalAlignment="Stretch"/>
-            <Button Content="Spiel verlassen" Grid.Row="3" VerticalAlignment="Stretch"/>
+            <Button Content="Neues Spiel" Grid.Row="0"  VerticalAlignment="Stretch"  Command="{Binding StartNewGameCommand}"/>
+            <Button Content="Optionen" Grid.Row="1" VerticalAlignment="Stretch"  Command="{Binding OptionsCommand}"/>
+            <Button Content="Regeln" Grid.Row="2" VerticalAlignment="Stretch"  Command="{Binding RulesCommand}"/>
+            <Button Content="Spiel verlassen" Grid.Row="3" VerticalAlignment="Stretch"  Command="{Binding ExitCommand}"/>
         </Grid>
     
     

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Set.UserControl1"
+﻿<UserControl x:Class="Set.RulesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,7 +17,7 @@
             <RowDefinition Height="798*"/>
             <RowDefinition Height="83*"/>
         </Grid.RowDefinitions>
-        <Button Content="Zurück zum Menü" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="Zurück zum Menü" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="Hier sollen dann mal die Regeln drin stehen" TextWrapping="Wrap"/>
     </Grid>
 </UserControl>

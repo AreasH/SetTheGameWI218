@@ -22,6 +22,7 @@ namespace Set
         #region Fields
         MainWindowViewModel mwvm;
         Game gameLogic;
+        private string name = "GameViewModel";
         #endregion
 
         #region ImageSource Strings
@@ -263,6 +264,27 @@ namespace Set
         }
 
 
+
+        #endregion
+
+        #region Normal Properties
+        public string Name { get => name;}
+
+        #endregion
+
+        #region ToMenu
+        public DelegateCommand ChangeToMenuShortcut
+        {
+            get
+            {
+                return new DelegateCommand(p => ChangeToMenu());
+            }
+        }
+
+        public void ChangeToMenu()
+        {
+            mwvm.ChangePageTo("MenuViewModel");
+        }
         #endregion
     }
 }

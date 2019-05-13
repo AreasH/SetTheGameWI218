@@ -12,6 +12,7 @@ namespace Set
         public OptionsViewModel(MainWindowViewModel mainwindow)
         {
             mwvm = mainwindow;
+            color = new List<string>();
             color.Add("red"); //Default colors for the cards of the playset
             color.Add("green");
             color.Add("blue");
@@ -20,15 +21,32 @@ namespace Set
         #region Fields
         MainWindowViewModel mwvm;
         List<string> color;  //List which contains the preset colors.
+        private string name = "OptionsViewModel";
         #endregion
-        
+
+        #region Properties
         public List<string> Color { //Property for the list with colors
+            get=>color;
+            set=> color = value; }
 
-        get=>color;
-        set=> color = value;
 
+        public string Name { get => name; set => name = value; }
 
+        #endregion
+
+        #region ToMenu
+        public DelegateCommand ChangeToMenuShortcut
+        {
+            get
+            {
+                return new DelegateCommand(p => ChangeToMenu());
             }
+        }
 
+        public void ChangeToMenu()
+        {
+            mwvm.ChangePageTo("MenuViewModel");
+        }
+        #endregion
     }
 }
