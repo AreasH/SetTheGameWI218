@@ -8,7 +8,46 @@
       d:DesignHeight="450" d:DesignWidth="800"
       >
 
-  <Grid >
-      
-  </Grid>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="437*"/>
+            <ColumnDefinition Width="152*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="166*"/>
+            <RowDefinition Height="629*"/>
+            <RowDefinition Height="205*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1"  Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button  Content="Card 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0"/>
+            <Button  Content="Card 1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0"/>
+            <Button  Content="Card 2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0"/>
+            <Button  Content="Card 3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1"/>
+            <Button  Content="Card 4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1"/>
+            <Button  Content="Card 5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1"/>
+            <Button  Content="Card 6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2"/>
+            <Button  Content="Card 7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2"/>
+            <Button  Content="Card 8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2"/>
+            <Button  Content="Card 9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3"/>
+            <Button  Content="Card A" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3"/>
+            <Button  Content="Card B" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3"/>
+        </Grid>
+        <Button Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button Content="Sets anzeigen" Height="192"  Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="86"  Grid.Row="2" Text="Es sind x Sets möglich" TextWrapping="Wrap" VerticalAlignment="Center" Width="161"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Height="50" Text="Zeit:         xx:yy" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Right" Height="105"  Grid.Row="1" Text="Noch x Karten im Set" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,0.333,0,0"/>
+    </Grid>
 </UserControl>
