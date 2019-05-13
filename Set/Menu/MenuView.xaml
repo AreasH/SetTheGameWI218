@@ -10,10 +10,32 @@
 
 
   <Grid>
-    <Button Content="Neues Spiel" Height="100" Margin="69,206,0,0" VerticalAlignment="Top" Width="320"/>
-    <Button Content="Optionen" Height="98" Margin="69,350,0,0" VerticalAlignment="Top" Width="320"/>
-    <Button Content="Regeln" Height="98" Margin="69,500,0,0" VerticalAlignment="Top" Width="320"/>
-    <Button Content="Spiel verlassen" Height="98" Margin="69,654,0,0" VerticalAlignment="Top" Width="320"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="822*"/>
+            <RowDefinition Height="91*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Content="Neues Spiel" Grid.Row="0"  VerticalAlignment="Stretch" />
+            <Button Content="Optionen" Grid.Row="1" VerticalAlignment="Stretch"/>
+            <Button Content="Regeln" Grid.Row="2" VerticalAlignment="Stretch"/>
+            <Button Content="Spiel verlassen" Grid.Row="3" VerticalAlignment="Stretch"/>
+        </Grid>
+    
+    
+    
+    
 
   </Grid>
 </UserControl>
