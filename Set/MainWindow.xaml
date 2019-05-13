@@ -19,9 +19,10 @@
     <Window.InputBindings>
         <KeyBinding Key="Esc" Command="{Binding ChangePageToMenuShortcut}"  ></KeyBinding>
     </Window.InputBindings>
-    
+
     <DockPanel>
         <ContentControl Content="{Binding CurrentPageViewModel}" />
 
     </DockPanel>
 </Window>
+    
