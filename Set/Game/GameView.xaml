@@ -29,20 +29,68 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+              
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button  Content="Card 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0"/>
-            <Button  Content="Card 1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0"/>
-            <Button  Content="Card 2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0"/>
-            <Button  Content="Card 3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1"/>
-            <Button  Content="Card 4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1"/>
-            <Button  Content="Card 5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1"/>
-            <Button  Content="Card 6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2"/>
-            <Button  Content="Card 7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2"/>
-            <Button  Content="Card 8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2"/>
-            <Button  Content="Card 9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3"/>
-            <Button  Content="Card A" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3"/>
-            <Button  Content="Card B" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3"/>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0">
+             <StackPanel Orientation="Hoizontal"> <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel> </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3">
+            <StackPanel Orientation="Hoizontal">
+              <Image Source="Images/ellipse blau gefüllt.png"/>
+            </StackPanel>
+          </Button>
+
         </Grid>
         <Button Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
         <Button Content="Sets anzeigen" Height="192"  Grid.Row="1" VerticalAlignment="Center"/>
