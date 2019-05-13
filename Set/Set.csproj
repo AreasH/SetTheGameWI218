@@ -97,6 +97,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />
@@ -105,6 +109,10 @@
       <DependentUpon>MenuView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Menu\MenuViewModel.cs" />
+    <Compile Include="OptionsView.xaml.cs">
+      <DependentUpon>OptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsViewModel.cs" />
     <Compile Include="PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

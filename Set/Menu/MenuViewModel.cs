@@ -9,7 +9,7 @@ namespace Set
     /// <summary>
     /// This class is used to provide all functions for the menu view.
     /// </summary>
-    class MenuViewModel: PageViewModel
+    class MenuViewModel: ObservableObject, PageViewModel
     {
         public MenuViewModel(MainWindowViewModel mainwindow)
         {
