@@ -12,6 +12,7 @@ namespace Set
 
     public interface PageViewModel
     {
+        string Name { get; }
 
     }
 }

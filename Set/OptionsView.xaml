@@ -45,6 +45,6 @@
                 <CheckBox Content="Grau" Height="185"  Grid.Column="3" VerticalAlignment="Top" Margin="0,0,-0.667,0"/>
             </Grid>
         </Grid>
-        <Button Content="Zurück zum Menü" Height="38" VerticalAlignment="Top" Margin="0,0,1.333,0"/>
+        <Button Content="Zurück zum Menü" Height="38" VerticalAlignment="Top" Margin="0,0,1.333,0" Command="{Binding ChangeToMenuShortcut}"/>
     </Grid>
 </UserControl>

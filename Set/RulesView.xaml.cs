@@ -18,9 +18,9 @@ namespace Set
     /// <summary>
     /// Interaktionslogik für UserControl1.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class RulesView : UserControl
     {
-        public UserControl1()
+        public RulesView()
         {
             InitializeComponent();
         }

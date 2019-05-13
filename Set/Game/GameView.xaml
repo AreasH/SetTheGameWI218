@@ -44,7 +44,7 @@
             <Button  Content="Card A" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3"/>
             <Button  Content="Card B" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3"/>
         </Grid>
-        <Button Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
         <Button Content="Sets anzeigen" Height="192"  Grid.Row="1" VerticalAlignment="Center"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="86"  Grid.Row="2" Text="Es sind x Sets möglich" TextWrapping="Wrap" VerticalAlignment="Center" Width="161"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Height="50" Text="Zeit:         xx:yy" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
