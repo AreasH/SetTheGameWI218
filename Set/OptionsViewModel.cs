@@ -19,10 +19,10 @@ namespace Set
 
         #region Fields
         MainWindowViewModel mwvm;
-        List<string> color;
+        List<string> color;  //List which contains the preset colors.
         #endregion
         
-        public List<string> Color {
+        public List<string> Color { //Property for the list with colors
 
         get=>color;
         set=> color = value;
