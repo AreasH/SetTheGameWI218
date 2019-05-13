@@ -7,6 +7,44 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="822*"/>
+            <RowDefinition Height="91*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Content="Rot" Height="184" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,2.333,0"/>
+                <CheckBox Content="Blau" Height="184" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="151,0,150,0"/>
+                <CheckBox Content="Grün" Height="185" Grid.Column="2" VerticalAlignment="Top" Margin="0,0,-0.667,0"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Content="Lila" Height="185"  Grid.Column="0" VerticalAlignment="Top" Margin="0,0,3.333,0"/>
+                <CheckBox Content="Braun" Height="184" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="113,0,0.667,0"/>
+                <CheckBox Content="Orange" Height="183"  Grid.Column="2" VerticalAlignment="Top" Margin="0.333,0,0,0"/>
+                <CheckBox Content="Grau" Height="185"  Grid.Column="3" VerticalAlignment="Top" Margin="0,0,-0.667,0"/>
+            </Grid>
+        </Grid>
+        <Button Content="Zurück zum Menü" Height="38" VerticalAlignment="Top" Margin="0,0,1.333,0"/>
     </Grid>
 </UserControl>
