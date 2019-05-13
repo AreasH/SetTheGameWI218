@@ -139,6 +139,7 @@ namespace Set
                 {
                     twoButtonImageSource = value;
                     OnPropertyChanged("twoButtonImageSource");
+                    
                 }
             }
         }

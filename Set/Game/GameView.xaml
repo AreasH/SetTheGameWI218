@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Set"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      >
+      >!
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -33,46 +33,46 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0">
-             <StackPanel Orientation="Hoizontal"> <Image Source="Images/ellipse blau gefüllt.png"/>
+             <StackPanel Orientation="Horizontal"> <Image Source="Images/ellipse blau gefüllt.png"/>
             </StackPanel> </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0">
             <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3">
@@ -81,13 +81,13 @@
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3">
-            <StackPanel Orientation="Hoizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+            <StackPanel Orientation="Horizontal">
+              <Image Source=" Images/ellipse blau gefüllt.png"/>
             </StackPanel>
           </Button>
 
