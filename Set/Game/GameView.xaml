@@ -32,62 +32,75 @@
               
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0">
-             <StackPanel Orientation="Horizontal"> <Image Source="Images/ellipse blau gefüllt.png"/>
-            </StackPanel> </Button>
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" BorderThickness="0">
+             <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding zeroButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel> </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding oneButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding twoButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding threeButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding fourButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding fiveButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding sixButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding sevenButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding eightButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding nineButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding tenButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3">
                 <StackPanel Orientation="Horizontal">
-              <Image Source="Images/ellipse blau gefüllt.png"/>
+                    <Image Source="{Binding elevenButtonImageSource, Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
 

@@ -22,11 +22,16 @@ namespace Set
         public Game(GameViewModel g)
         {
             _gameViewModel = g;
+            setCards = new List<Card>();
+            Card c = new Card("diamond", "blue", "empty", "1", false, "Images/diamond_blue_empty_1.png");
+            setCards.Add(c);
+            setImageSource();
         }
 
         public void setImageSource() //Sets the Image Source of the Button in the ViewModel by using the ButtonImageSource properties
         {
             _gameViewModel.zeroButtonImageSource    = setCards[0].ImageSource;
+            /*
             _gameViewModel.oneButtonImageSource     = setCards[1].ImageSource;
             _gameViewModel.twoButtonImageSource     = setCards[2].ImageSource;
             _gameViewModel.threeButtonImageSource   = setCards[3].ImageSource;
@@ -38,6 +43,7 @@ namespace Set
             _gameViewModel.nineButtonImageSource    = setCards[9].ImageSource;
             _gameViewModel.tenButtonImageSource     = setCards[10].ImageSource;
             _gameViewModel.elevenButtonImageSource  = setCards[11].ImageSource;
+            */
 
         }
 

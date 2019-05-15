@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +18,18 @@ namespace Set
         private string numberOfObjects;
         private bool selected;
         private string imageSource;
+
+        public Card(string shape, string color, string filling, string numberOfObjects, bool selected, string imageSource)
+        {
+            this.shape = shape;
+            this.color = color;
+            this.filling = filling;
+            this.numberOfObjects = numberOfObjects;
+            this.selected = selected;
+            this.imageSource = Path.Combine(Environment.CurrentDirectory,imageSource);
+
+
+        }
 
         #region Properties
         public string ImageSource { get => imageSource; set => imageSource = value; }
