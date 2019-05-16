@@ -112,7 +112,7 @@ namespace Set
             {
                 if (zeroButtonImageSource != value)
                 {
-                    zeroButtonImageSource = value;
+                    _zeroButtonImageSource = value;
                     OnPropertyChanged("zeroButtonImageSource");
                 }
             }
@@ -125,7 +125,7 @@ namespace Set
             {
                 if (oneButtonImageSource != value)
                 {
-                    oneButtonImageSource = value;
+                    _oneButtonImageSource = value;
                     OnPropertyChanged("oneButtonImageSource");
                 }
             }
@@ -138,7 +138,7 @@ namespace Set
             {
                 if (twoButtonImageSource != value)
                 {
-                    twoButtonImageSource = value;
+                    _twoButtonImageSource = value;
                     OnPropertyChanged("twoButtonImageSource");
                     
                 }
@@ -152,7 +152,7 @@ namespace Set
             {
                 if (threeButtonImageSource != value)
                 {
-                    threeButtonImageSource = value;
+                    _threeButtonImageSource = value;
                     OnPropertyChanged("threeButtonImageSource");
                 }
             }
@@ -165,7 +165,7 @@ namespace Set
             {
                 if (fourButtonImageSource != value)
                 {
-                    fourButtonImageSource = value;
+                    _fourButtonImageSource = value;
                     OnPropertyChanged("fourButtonImageSource");
                 }
             }
@@ -178,7 +178,7 @@ namespace Set
             {
                     if (fiveButtonImageSource != value)
                     {
-                        fiveButtonImageSource = value;
+                        _fiveButtonImageSource = value;
                         OnPropertyChanged("fiveButtonImageSource");
                     }
                 
@@ -192,7 +192,7 @@ namespace Set
             {
                 if (sixButtonImageSource != value)
                 {
-                    sixButtonImageSource = value;
+                    _sixButtonImageSource = value;
                     OnPropertyChanged("sixButtonImageSource");
                 }
             }
@@ -205,7 +205,7 @@ namespace Set
             {
                 if (sevenButtonImageSource != value)
                 {
-                    sevenButtonImageSource = value;
+                    _sevenButtonImageSource = value;
                     OnPropertyChanged("sevenButtonImageSource");
                 }
             }
@@ -218,7 +218,7 @@ namespace Set
             {
                 if (eightButtonImageSource != value)
                 {
-                    eightButtonImageSource = value;
+                    _eightButtonImageSource = value;
                     OnPropertyChanged("sevenButtonImageSource");
                 }
             }
@@ -231,7 +231,7 @@ namespace Set
             {
                 if (nineButtonImageSource != value)
                 {
-                    nineButtonImageSource = value;
+                    _nineButtonImageSource = value;
                     OnPropertyChanged("nineButtonImageSource");
                 }
             }
@@ -244,7 +244,7 @@ namespace Set
             {
                 if (tenButtonImageSource != value)
                 {
-                    tenButtonImageSource = value;
+                    _tenButtonImageSource = value;
                     OnPropertyChanged("tenButtonImageSource");
                 }
             }
@@ -257,7 +257,7 @@ namespace Set
             {
                 if (elevenButtonImageSource != value)
                 {
-                    elevenButtonImageSource = value;
+                    _elevenButtonImageSource = value;
                     OnPropertyChanged("elevenButtonImageSource");
                 }
             }

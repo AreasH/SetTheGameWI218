@@ -19,14 +19,17 @@ namespace Set
         private bool selected;
         private string imageSource;
 
-        public Card(string shape, string color, string filling, string numberOfObjects, bool selected, string imageSource)
+        public Card(string imageSource)
         {
-            this.shape = shape;
-            this.color = color;
-            this.filling = filling;
-            this.numberOfObjects = numberOfObjects;
-            this.selected = selected;
+            //Splitting the image source code into an array of strings to gain access to the attribute of the card.
+            string imageName = imageSource.Substring(7, imageSource.Length-11);
+            string[] meineStrings = imageName.Split(new Char[] { '_' });
             this.imageSource = Path.Combine(Environment.CurrentDirectory,imageSource);
+            this.shape = meineStrings[0];
+            this.color = meineStrings[1];
+            this.filling = meineStrings[2];
+            this.numberOfObjects = meineStrings[3];
+            this.selected = false;
 
 
         }

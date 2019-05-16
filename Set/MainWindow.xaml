@@ -20,8 +20,12 @@
         <DataTemplate  DataType="{x:Type local:RulesViewModel}">
             <local:RulesView/>
         </DataTemplate>
+
+      
     </Window.Resources>
 
+    
+    
     <Window.InputBindings>
         <KeyBinding Key="Esc" Command="{Binding ChangePageToMenuShortcut}"  ></KeyBinding>
     </Window.InputBindings>
