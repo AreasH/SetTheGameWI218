@@ -32,6 +32,8 @@
               
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            
+
           <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" BorderThickness="0">
              <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding zeroButtonImageSource,Mode=TwoWay,

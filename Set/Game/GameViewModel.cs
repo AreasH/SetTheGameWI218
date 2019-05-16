@@ -15,8 +15,6 @@ namespace Set
         {
             mwvm = mainwindow;
             gameLogic = new Game(this);
-            
-
         }
         
         #region Fields
@@ -39,6 +37,12 @@ namespace Set
         string _tenButtonImageSource;
         string _elevenButtonImageSource;
         #endregion
+
+        #region OneButtonSelectedStrings
+        string hidden = "Hidden";
+        string visible = "Visible";
+        #endregion
+
 
         #region Button Pressed Properties
 
@@ -266,6 +270,8 @@ namespace Set
 
 
         #endregion
+
+       
 
         #region Normal Properties
         public string Name { get => name;}
