@@ -38,7 +38,7 @@ namespace Set
         string _elevenButtonImageSource;
         #endregion
 
-        #region OneButtonSelectedStrings
+        #region ButtonSelectedStrings
         string hidden = "Hidden";
         string visible = "Visible";
         #endregion
