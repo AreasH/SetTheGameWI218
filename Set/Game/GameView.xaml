@@ -8,9 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       >
 
-    <Grid>
+    <Grid Background="ForestGreen">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="152*"/>
             <ColumnDefinition Width="437*"/>
             <ColumnDefinition Width="152*"/>
         </Grid.ColumnDefinitions>
@@ -29,77 +29,76 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-              
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
 
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" BorderThickness="0">
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" BorderThickness="1">
              <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding zeroButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel> </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0">
+          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding oneButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding twoButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding threeButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding fourButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding fiveButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding sixButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding sevenButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding eightButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding nineButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding tenButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3" Background="White" BorderThickness="1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding elevenButtonImageSource, Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
@@ -107,10 +106,10 @@
           </Button>
 
         </Grid>
-        <Button Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
-        <Button Content="Sets anzeigen" Height="192"  Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="86"  Grid.Row="2" Text="Es sind x Sets möglich" TextWrapping="Wrap" VerticalAlignment="Center" Width="161"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Height="50" Text="Zeit:         xx:yy" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Right" Height="105"  Grid.Row="1" Text="Noch x Karten im Set" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,0.333,0,0"/>
+        <Button Content="Zurück zum Menü"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
+        <Button Content="Gefundene Sets" Background="DarkRed" Height="150"  Width="120" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="2" Background="DarkRed" HorizontalAlignment="Center" Height="86"  Grid.Row="2" Text="Es sind x Sets möglich" TextWrapping="Wrap" VerticalAlignment="Center" Width="161"/>
+        <TextBlock Grid.Column="1" Background="White" HorizontalAlignment="Center" Height="50" Text="Zeit:         xx:yy" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
+        <TextBlock Grid.Column="2" Background="DarkRed" HorizontalAlignment="Right" Height="105"  Grid.Row="1" Text="Noch x Karten im Set" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,0.333,0,0"/>
     </Grid>
 </UserControl>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Set"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Aquamarine">
+    <Grid Background="ForestGreen">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="34*"/>
@@ -17,7 +17,10 @@
             <RowDefinition Height="822*"/>
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="1" Grid.Row="1" >
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Button Content="Farben speichern" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="100" Width="170"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -41,6 +44,6 @@
                                                               UpdateSourceTrigger=PropertyChanged}" 
                       HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
         </Grid>
-        <Button Content="Zurück zum Menü" Height="38" VerticalAlignment="Top" Margin="0,0,1.333,0" Command="{Binding ChangeToMenuShortcut}"/>
+        <Button Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
     </Grid>
 </UserControl>
