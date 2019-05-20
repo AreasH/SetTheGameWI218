@@ -32,77 +32,113 @@
               
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
 
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" BorderThickness="0">
-             <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding zeroButtonImageSource,Mode=TwoWay,
-                                                UpdateSourceTrigger=PropertyChanged}"/>
-                </StackPanel> </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0">
+
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" 
+                    BorderBrush="{Binding zeroButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding zeroButton}">
+             <StackPanel Orientation="Horizontal" >
+                    <Grid>
+                        <Image Source="{Binding zeroButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}" Stretch="Uniform"/>
+                    </Grid>
+        </StackPanel> </Button>
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Background="White" 
+                  BorderBrush="{Binding oneButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding oneButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding oneButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding oneButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0" Background="White" 
+                  BorderBrush="{Binding twoButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding twoButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding twoButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding twoButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Background="White" 
+                  BorderBrush="{Binding threeButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding threeButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding threeButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding threeButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </StackPanel>
+          </Button>
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Background="White" 
+                  BorderBrush="{Binding fourButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding fourButton}">
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Image Source="{Binding fourButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </StackPanel>
+          </Button>
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1" Background="White" 
+                  BorderBrush="{Binding fiveButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding fiveButton}">
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Image Source="{Binding fiveButtonImageSource,Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2" Background="White" 
+                  BorderBrush="{Binding sixButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding sixButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding fourButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding sixButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2" Background="White" 
+                  BorderBrush="{Binding sevenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding sevenButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding fiveButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding sevenButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2" Background="White" 
+                  BorderBrush="{Binding eightButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding eightButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding sixButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding eightButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Background="White" 
+                  BorderBrush="{Binding nineButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding nineButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding sevenButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding nineButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3" Background="White" 
+                  BorderBrush="{Binding tenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding tenButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding eightButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding tenButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3">
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3" Background="White" 
+                  BorderBrush="{Binding elevenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding elevenButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding nineButtonImageSource,Mode=TwoWay,
+                    <Grid>
+                        <Image Source="{Binding elevenButtonImageSource, Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
-          </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding tenButtonImageSource,Mode=TwoWay,
-                                                UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
-          </Button>
-          <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding elevenButtonImageSource, Mode=TwoWay,
-                                                UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
             </StackPanel>
           </Button>
 
