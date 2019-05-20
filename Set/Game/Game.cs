@@ -10,35 +10,52 @@ namespace Set
     class Game
     {
         GameViewModel _gameViewModel;
-        HashSet<Card> AllCards;  //Includes really all Cards possible, even if not used in this game instance
-        HashSet<Card> Playset; //Includes only the 81 Selected Cards that are used for this game instance
-        HashSet<Card> foundSets; // Includes all Cards that were found to be a set (found by the player)
-        HashSet<Card> removedCards; //All Cards that were removed due to the player not being able to find a set
+        List<Card> AllCards;  //Includes really all Cards possible, even if not used in this game instance
+        List<Card> Playset; //Includes only the 81 Selected Cards that are used for this game instance
+        List<Card> foundSets; // Includes all Cards that were found to be a set (found by the player)
+        List<Card> removedCards; //All Cards that were removed due to the player not being able to find a set
         List<Card> setCards; //The twelve cards that are actually up for finding a set inside them.
         List<Card> selectedCards; //The cards selected by the player -- not allowed to be more than 3.
         int NumberOfPossibleSets;
         int CountSelectedCards = 0;
 
-        public HashSet<Card> AllCards1 { get => AllCards; set => AllCards = value; }
-        public HashSet<Card> Playset1 { get => Playset; set => Playset = value; }
-        public HashSet<Card> FoundSets { get => foundSets; set => foundSets = value; }
-        public HashSet<Card> RemovedCards { get => removedCards; set => removedCards = value; }
+        public List<Card> AllCards1 { get => AllCards; set => AllCards = value; }
+        public List<Card> Playset1 { get => Playset; set => Playset = value; }
+        public List<Card> FoundSets { get => foundSets; set => foundSets = value; }
+        public List<Card> RemovedCards { get => removedCards; set => removedCards = value; }
         public List<Card> SetCards { get => setCards; set => setCards = value; }
         public List<Card> SelectedCards { get => selectedCards; set => selectedCards = value; }
         public int NumberOfPossibleSets1 { get => NumberOfPossibleSets; set => NumberOfPossibleSets = value; }
         public int CountSelectedCards1 { get => CountSelectedCards; set => CountSelectedCards = value; }
 
+        
         public Game(GameViewModel g)
         {
+            
             _gameViewModel = g;
             initializeCards();
-            setImageSource();
-        }
+            generatePlaySet();
+            SetCards = new List<Card>();
+            Random rnd = new Random();
+            int i = rnd.Next(Playset1.Count);
+            while(SetCards.Count<=12)
+            {
+                if (!SetCards.Contains(Playset1[i]))
+                {
+                    SetCards.Add(Playset1[i]);
 
+                    i = rnd.Next(Playset1.Count);
+                }
+            }
+            setImageSource();
+            SelectedCards = new List<Card>();
+        }
+         
+        
         public void initializeCards()
         {
             //Build AllCards
-            AllCards1 = new HashSet<Card>();
+            AllCards1 = new List<Card>();
             AllCards1.Add(new Card("Images/diamond_blue_empty_1.png"));
             AllCards1.Add(new Card("Images/diamond_blue_empty_2.png"));
             AllCards1.Add(new Card("Images/diamond_blue_empty_3.png"));
@@ -230,10 +247,17 @@ namespace Set
             AllCards1.Add(new Card("Images/square_red_striped_3.png"));
         }
 
+        public void generatePlaySet()
+        {
+            Playset1.Add(AllCards1.Where());
+        }
+
+        
+
         public void setImageSource() //Sets the Image Source of the Button in the ViewModel by using the ButtonImageSource properties
         {
 
-            /*
+            
             _gameViewModel.zeroButtonImageSource    = setCards[0].ImageSource;
             _gameViewModel.oneButtonImageSource     = setCards[1].ImageSource;
             _gameViewModel.twoButtonImageSource     = setCards[2].ImageSource;
@@ -246,18 +270,42 @@ namespace Set
             _gameViewModel.nineButtonImageSource    = setCards[9].ImageSource;
             _gameViewModel.tenButtonImageSource     = setCards[10].ImageSource;
             _gameViewModel.elevenButtonImageSource  = setCards[11].ImageSource;
-            */
+            
 
         }
 
-        public void CardSelected(int i) //Card at index i from setCards is added to the selectedCards.
+        public void CardSelected(int i) //Card at index i from setCards is added/removed to the selectedCards.
         {
-            SelectedCards.Add(SetCards[i]);
-            if(SelectedCards.Count == 3)
+            
+            if(SelectedCards.Contains(SetCards[i]))
             {
-                //IsASet();
-                SelectedCards.Clear();
+                SelectedCards.Remove(SetCards[i]);
+                SetCards[i].Selected = false;
+                _gameViewModel.RefreshSelection();
             }
+            else
+            {
+                SelectedCards.Add(SetCards[i]);
+                SetCards[i].Selected = true;
+                _gameViewModel.RefreshSelection();
+                if (SelectedCards.Count == 3)
+                {
+                    if(IsASet(SelectedCards[0], SelectedCards[1], SelectedCards[2]))
+                    {
+                        Playset1 = Playset1.Except(SelectedCards).ToList();
+                        SetCards = SetCards.Except(SelectedCards).ToList();
+                    }
+
+                    SelectedCards.Clear();
+                    foreach (Card card in Playset1)
+                    {
+                        card.Selected = false;
+                    }
+                    _gameViewModel.RefreshSelection();
+
+                }
+            }
+            
         }
 
         #region FindOutNumbersOfPossibleSets

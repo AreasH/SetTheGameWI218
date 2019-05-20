@@ -39,10 +39,138 @@ namespace Set
         #endregion
 
         #region ButtonSelectedStrings
-        string hidden = "Hidden";
-        string visible = "Visible";
+        string hidden = "White";
+        string visible = "SkyBlue";
         #endregion
 
+        #region Methods
+        public void RefreshSelection()
+        {
+            OnPropertyChanged("zeroButtonSelected");
+            OnPropertyChanged("oneButtonSelected");
+            OnPropertyChanged("twoButtonSelected");
+            OnPropertyChanged("threeButtonSelected");
+            OnPropertyChanged("fourButtonSelected");
+            OnPropertyChanged("fiveButtonSelected");
+            OnPropertyChanged("sixButtonSelected");
+            OnPropertyChanged("sevenButtonSelected");
+            OnPropertyChanged("eightButtonSelected");
+            OnPropertyChanged("nineButtonSelected");
+            OnPropertyChanged("tenButtonSelected");
+            OnPropertyChanged("elevenButtonSelected");
+        }
+        #endregion
+
+        #region Button Selected Properties
+        public string zeroButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[0].Selected==true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string oneButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[1].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string twoButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[2].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string threeButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[3].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string fourButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[4].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string fiveButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[5].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string sixButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[6].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string sevenButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[7].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string eightButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[8].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string nineButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[9].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string tenButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[10].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        public string elevenButtonSelected
+        {
+            get
+            {
+                string temp = gameLogic.SetCards[11].Selected == true ? visible : hidden;
+                return temp;
+            }
+        }
+
+        #endregion
 
         #region Button Pressed Properties
 
