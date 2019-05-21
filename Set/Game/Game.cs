@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Threading;
 namespace Set
 {
 
@@ -18,6 +18,8 @@ namespace Set
         List<Card> selectedCards; //The cards selected by the player -- not allowed to be more than 3.
         int NumberOfPossibleSets;
         int CountSelectedCards = 0;
+        DispatcherTimer timer; //timer displaying the time passed by since the game was started (in seconds). 
+        int time = 0;
 
         public List<Card> AllCards1 { get => AllCards; set => AllCards = value; }
         public List<Card> Playset1 { get => Playset; set => Playset = value; }
@@ -35,6 +37,8 @@ namespace Set
             _gameViewModel = g;
             initializeCards();
             generatePlaySet();
+            initializeTimer();
+            timer.Start();
             SetCards = new List<Card>();
             Random rnd = new Random();
             int i = rnd.Next(Playset1.Count);
@@ -249,7 +253,13 @@ namespace Set
 
         public void generatePlaySet()
         {
-            Playset1=AllCards1;
+            foreach (Card card in AllCards1) {
+                if ((card.Color=Options.getColors[0]) ||(card.Color=Options.getColors[1]) || (card.Color=Options.getColors[2]) ) { // Note for Andi: Please implement the method Options.getColors which returns an Array containing the 3 selected colors
+                
+              Playset1.Add(card);
+                    }
+            }
+         
         }
 
         
@@ -393,6 +403,23 @@ namespace Set
 
 
         #endregion
+
+        public void initializeTimer() {
+
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(timer_tick);
+            timer.Interval = new TimeSpan (0,0,1);
+
+}
+
+        public void timer_tick (object sender, EventArgs e) { //Counts the number of seconds since the game was started.
+
+            time++;
+}
+
+
+
+
 
 
 
