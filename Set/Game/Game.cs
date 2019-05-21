@@ -249,7 +249,7 @@ namespace Set
 
         public void generatePlaySet()
         {
-            Playset1.Add(AllCards1.Where());
+            Playset1=AllCards1;
         }
 
         

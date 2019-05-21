@@ -16,7 +16,9 @@ namespace Set
             mwvm = mainwindow;
             gameLogic = new Game(this);
         }
-        
+
+       
+
         #region Fields
         MainWindowViewModel mwvm;
         Game gameLogic;

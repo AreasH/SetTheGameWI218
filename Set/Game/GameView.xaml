@@ -8,9 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       >
 
-    <Grid>
+    <Grid Background="MediumSeaGreen">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="152*"/>
             <ColumnDefinition Width="437*"/>
             <ColumnDefinition Width="152*"/>
         </Grid.ColumnDefinitions>
@@ -139,14 +139,19 @@
                         <Image Source="{Binding elevenButtonImageSource, Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
-
+                </StackPanel>
+            </Button>
         </Grid>
-        <Button Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
-        <Button Content="Sets anzeigen" Height="192"  Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="86"  Grid.Row="2" Text="Es sind x Sets möglich" TextWrapping="Wrap" VerticalAlignment="Center" Width="161"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Height="50" Text="Zeit:         xx:yy" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Right" Height="105"  Grid.Row="1" Text="Noch x Karten im Set" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,0.333,0,0"/>
+        <Button Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
+        <Button Content="Gefundene Sets" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="150" Width="150"/>
+        <Border BorderThickness="4" BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2">
+        <TextBlock Text="Es sind x Sets möglich" TextWrapping="Wrap"/>
+        </Border>
+            <Border BorderThickness="4" BorderBrush="Black" Height="30" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Foreground="White" Text="Zeit:         xx:yy" TextWrapping="Wrap" Width="287"/>
+        </Border>
+        <Border BorderThickness="4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" VerticalAlignment="Top">
+        <TextBlock Background="MediumSeaGreen" Text="Noch x Karten übrig" TextWrapping="Wrap"/>
+        </Border>
     </Grid>
 </UserControl>
