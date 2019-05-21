@@ -18,7 +18,14 @@ namespace Set
         MainWindowViewModel mwvm;
         private string name = "RulesViewModel";
 
+
+        #endregion
+
+        #region Properties
         public string Name { get => name; }
+
+        public Object Data { get; }
+
         #endregion
 
         #region ToMenu
@@ -34,6 +41,7 @@ namespace Set
         {
             mwvm.ChangePageTo("MenuViewModel");
         }
+
         #endregion
     }
 }

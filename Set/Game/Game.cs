@@ -9,7 +9,9 @@ namespace Set
 
     class Game
     {
+        #region Fields
         GameViewModel _gameViewModel;
+        Options options;
         List<Card> AllCards;  //Includes really all Cards possible, even if not used in this game instance
         List<Card> Playset; //Includes only the 81 Selected Cards that are used for this game instance
         List<Card> foundSets; // Includes all Cards that were found to be a set (found by the player)
@@ -18,6 +20,7 @@ namespace Set
         List<Card> selectedCards; //The cards selected by the player -- not allowed to be more than 3.
         int NumberOfPossibleSets;
         int CountSelectedCards = 0;
+        #endregion
 
         public List<Card> AllCards1 { get => AllCards; set => AllCards = value; }
         public List<Card> Playset1 { get => Playset; set => Playset = value; }
@@ -29,10 +32,10 @@ namespace Set
         public int CountSelectedCards1 { get => CountSelectedCards; set => CountSelectedCards = value; }
 
         
-        public Game(GameViewModel g)
+        public Game(GameViewModel g, Object options)
         {
-            
             _gameViewModel = g;
+            this.options = (Options) options;
             initializeCards();
             generatePlaySet();
             SetCards = new List<Card>();
@@ -43,7 +46,7 @@ namespace Set
                 if (!SetCards.Contains(Playset1[i]))
                 {
                     SetCards.Add(Playset1[i]);
-
+                    Playset1.RemoveAt(i);
                     i = rnd.Next(Playset1.Count);
                 }
             }
@@ -51,7 +54,6 @@ namespace Set
             SelectedCards = new List<Card>();
         }
          
-        
         public void initializeCards()
         {
             //Build AllCards
@@ -249,10 +251,8 @@ namespace Set
 
         public void generatePlaySet()
         {
-            Playset1.Add(AllCards1.Where());
+            Playset1 = AllCards1;
         }
-
-        
 
         public void setImageSource() //Sets the Image Source of the Button in the ViewModel by using the ButtonImageSource properties
         {
@@ -295,7 +295,10 @@ namespace Set
                         Playset1 = Playset1.Except(SelectedCards).ToList();
                         SetCards = SetCards.Except(SelectedCards).ToList();
                     }
-
+                    foreach(Card card in SelectedCards)
+                    {
+                        card.Selected = false;
+                    }
                     SelectedCards.Clear();
                     foreach (Card card in Playset1)
                     {

@@ -11,14 +11,15 @@ namespace Set
     /// </summary>
     class GameViewModel: ObservableObject, PageViewModel
     {
-        public GameViewModel(MainWindowViewModel mainwindow)
+        public GameViewModel(MainWindowViewModel mainwindow, PageViewModel options)
         {
             mwvm = mainwindow;
-            gameLogic = new Game(this);
+            gameLogic = new Game(this,options.Data);
         }
         
         #region Fields
         MainWindowViewModel mwvm;
+        Options ovm;
         Game gameLogic;
         private string name = "GameViewModel";
         #endregion
@@ -399,11 +400,10 @@ namespace Set
 
         #endregion
 
-       
-
         #region Normal Properties
         public string Name { get => name;}
 
+        public Object Data { get { return gameLogic; } }
         #endregion
 
         #region ToMenu
