@@ -403,6 +403,9 @@ namespace Set
         #region Normal Properties
         public string Name { get => name;}
 
+         public string numberOfPossibleSets {
+            get {return gameLogic.FindOutNumberOfPossibleSets().ToString();}
+            }
         public Object Data { get { return gameLogic; } }
         #endregion
 
@@ -420,5 +423,12 @@ namespace Set
             mwvm.ChangePageTo("MenuViewModel");
         }
         #endregion
+
+       
+
+
+
+
+
     }
 }
