@@ -9,7 +9,9 @@ namespace Set
 
     class Game
     {
+        #region Fields
         GameViewModel _gameViewModel;
+        Options options;
         List<Card> AllCards;  //Includes really all Cards possible, even if not used in this game instance
         List<Card> Playset; //Includes only the 81 Selected Cards that are used for this game instance
         List<Card> foundSets; // Includes all Cards that were found to be a set (found by the player)
@@ -31,10 +33,10 @@ namespace Set
         public int CountSelectedCards1 { get => CountSelectedCards; set => CountSelectedCards = value; }
 
         
-        public Game(GameViewModel g)
+        public Game(GameViewModel g, Object options)
         {
-            
             _gameViewModel = g;
+            this.options = (Options) options;
             initializeCards();
             generatePlaySet();
             initializeTimer();
@@ -47,7 +49,7 @@ namespace Set
                 if (!SetCards.Contains(Playset1[i]))
                 {
                     SetCards.Add(Playset1[i]);
-
+                    Playset1.RemoveAt(i);
                     i = rnd.Next(Playset1.Count);
                 }
             }
@@ -55,7 +57,6 @@ namespace Set
             SelectedCards = new List<Card>();
         }
          
-        
         public void initializeCards()
         {
             //Build AllCards
@@ -305,7 +306,10 @@ namespace Set
                         Playset1 = Playset1.Except(SelectedCards).ToList();
                         SetCards = SetCards.Except(SelectedCards).ToList();
                     }
-
+                    foreach(Card card in SelectedCards)
+                    {
+                        card.Selected = false;
+                    }
                     SelectedCards.Clear();
                     foreach (Card card in Playset1)
                     {

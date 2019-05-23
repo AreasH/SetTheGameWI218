@@ -45,7 +45,7 @@ namespace Set
 
         public string Name { get => name;}
 
-
+        public Object Data { get; }
         #endregion
 
         #region Methods
@@ -66,8 +66,8 @@ namespace Set
 
         public void ExitProgram()
         {
-
         }
+
 
         #endregion
 

@@ -12,15 +12,7 @@ namespace Set
         public OptionsViewModel(MainWindowViewModel mainwindow)
         {
             mwvm = mainwindow;
-            _ColorSource = new List<string>();
-            _ColorSource.Add("blue");
-            _ColorSource.Add("green");
-            _ColorSource.Add("red");
-            _ColorSource.Add("brown");
-            _ColorSource.Add("grey");
-            _ColorSource.Add("purple");
-            _ColorSource.Add("orange");
-
+            data = new Options(this);
             FirstSelectedColor = "red";  //Default colors for the cards of the playset
             SecondSelectedColor = "green";
             ThirdSelectedColor = "blue"; //Contains the colors of the playset cards.
@@ -29,65 +21,53 @@ namespace Set
 
         #region Fields
         MainWindowViewModel mwvm;
-        List<string> color;  //List which contains the preset colors.
+        Options data;
         private string name = "OptionsViewModel";
-
-        private List<string> _ColorSource;
-        string _firstSelectedColor;
-        string _secondSelectedColor;
-        string _thirdSelectedColor;
         #endregion
 
         #region Properties
 
-
-        public List<string> Color
-        { //Property for the list with colors, only allows for three colors to be saved.
-            get
-            {
-                if (color == null)
-                    color = new List<string>();
-                color.Clear();
-                color.Add(FirstSelectedColor);
-                color.Add(SecondSelectedColor);
-                color.Add(ThirdSelectedColor);
-                return color;
-            }
-        }
+        public List<string> ColorSource
+        { get { return data.ColorSource; } }
 
         public string FirstSelectedColor
-        { get { return _firstSelectedColor; }
-          set { _firstSelectedColor = value;
+        { get { return data.FirstSelectedColor; }
+          set { data.FirstSelectedColor = value;
                 OnPropertyChanged("FirstSelectedColor");
-              }
+                OnPropertyChanged("SaveColorsCommandVisibility");
+            }
         }
 
         public string SecondSelectedColor
         {
-            get { return _secondSelectedColor; }
+            get { return data.SecondSelectedColor; }
             set
             {
-                _secondSelectedColor = value;
+                data.SecondSelectedColor = value;
                 OnPropertyChanged("SecondSelectedColor");
+                OnPropertyChanged("SaveColorsCommandVisibility");
             }
          }
 
         public string ThirdSelectedColor
         {
-            get { return _thirdSelectedColor; }
+            get { return data.ThirdSelectedColor; }
             set
             {
-                _thirdSelectedColor = value;
+                data.ThirdSelectedColor = value;
                 OnPropertyChanged("ThirdSelectedColor");
+                OnPropertyChanged("SaveColorsCommandVisibility");
             }
         }
 
+        public bool SaveColorsCommandVisibility
+        { get { return data.AreColorsDifferent(); } }
 
-        public List<string> ColorSource
-        {
-            get { return _ColorSource; }
-          
-        }
+        public DelegateCommand SaveColorsCommand
+        { get { return new DelegateCommand(param => data.SaveColors()); } }
+
+        public Object Data
+        {  get { return data; } }
 
         public string Name { get => name; set => name = value; }
 

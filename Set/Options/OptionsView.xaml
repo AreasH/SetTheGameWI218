@@ -26,23 +26,32 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <ComboBox Grid.Row="0"
+            <Grid   Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Grid.Row="0" Grid.Column="0"
                                       ItemsSource="{Binding ColorSource, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding FirstSelectedColor,
                                                               UpdateSourceTrigger=PropertyChanged}" 
                       HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
-            <ComboBox Grid.Row="1"
+                <ComboBox Grid.Row="1" Grid.Column="1"
                                       ItemsSource="{Binding ColorSource, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding SecondSelectedColor,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}" 
                       HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
-            <ComboBox Grid.Row="2"
+                <ComboBox Grid.Row="2"  Grid.Column="2"
                                       ItemsSource="{Binding ColorSource, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding ThirdSelectedColor,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}" 
                       HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+                <Button Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Farben speichern" IsEnabled="{Binding SaveColorsCommandVisibility, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
         </Grid>
         <Button Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
     </Grid>

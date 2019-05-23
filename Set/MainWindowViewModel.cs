@@ -19,8 +19,8 @@ namespace Set
         {
             // Add available pages
             PageViewModels.Add(new MenuViewModel(this));
-            PageViewModels.Add(new GameViewModel(this));
             PageViewModels.Add(new OptionsViewModel(this));
+            PageViewModels.Add(new GameViewModel(this, PageViewModels[1]));
             PageViewModels.Add(new RulesViewModel(this));
 
             // Set starting page
@@ -35,61 +35,8 @@ namespace Set
             get {return name; }
         }
 
-        public DelegateCommand ChangePageToMenuShortcut
-        {
-            get
-            {
-                if (_changePageCommand == null)
-                {
-                    _changePageCommand = new DelegateCommand(
-                        p => ChangePageTo("MenuViewModel"));
-                }
+        public Object Data { get; }
 
-                return _changePageCommand;
-            }
-        }
-
-        public DelegateCommand ChangePageToGameShortcut
-        {
-            get
-            {
-                if (_changePageCommand == null)
-                {
-                    _changePageCommand = new DelegateCommand(
-                        p => ChangePageTo("GameViewModel"));
-                }
-
-                return _changePageCommand;
-            }
-        }
-
-        public DelegateCommand ChangePageToRulesShortcut
-        {
-            get
-            {
-                if (_changePageCommand == null)
-                {
-                    _changePageCommand = new DelegateCommand(
-                        p => ChangePageTo("RulesViewModel"));
-                }
-
-                return _changePageCommand;
-            }
-        }
-
-        public DelegateCommand ChangePageToOptionsShortcut
-        {
-            get
-            {
-                if (_changePageCommand == null)
-                {
-                    _changePageCommand = new DelegateCommand(
-                        p => ChangePageTo("OptionsViewModel"));
-                }
-
-                return _changePageCommand;
-            }
-        }
         public List<PageViewModel> PageViewModels
         {
             get
