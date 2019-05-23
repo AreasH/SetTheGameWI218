@@ -37,6 +37,7 @@ namespace Set
 
         public Object Data { get; }
 
+
         public List<PageViewModel> PageViewModels
         {
             get
@@ -67,7 +68,8 @@ namespace Set
 
         #region Methods
 
-
+        public void RefreshPage()
+        { }
 
         public void ChangePageTo(string name)
         {
@@ -75,6 +77,7 @@ namespace Set
             {
                 if(name == page.Name)
                 {
+                    page.RefreshPage();
                     CurrentPageViewModel = page;
                 }
             }

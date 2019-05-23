@@ -45,6 +45,12 @@ namespace Set
         #endregion
 
         #region Methods
+
+        public void RefreshPage()
+        {
+            gameLogic.StartNewGame();
+        }
+
         public void RefreshSelection()
         {
             OnPropertyChanged("zeroButtonSelected");
@@ -404,7 +410,7 @@ namespace Set
         public string Name { get => name;}
 
          public string numberOfPossibleSets {
-            get {return gameLogic.FindOutNumberOfPossibleSets().ToString();}
+            get {return " Es sind " +gameLogic.FindOutNumberOfPossibleSets().ToString()+ "Sets möglich.";}
             }
         public Object Data { get { return gameLogic; } }
         #endregion
