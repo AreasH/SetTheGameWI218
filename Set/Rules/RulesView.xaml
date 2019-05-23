@@ -6,18 +6,41 @@
              xmlns:local="clr-namespace:Set"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="MediumSeaGreen">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="152*"/>
             <ColumnDefinition Width="428*"/>
-            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="152*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="83*"/>
             <RowDefinition Height="798*"/>
             <RowDefinition Height="83*"/>
         </Grid.RowDefinitions>
-        <Button Content="Zurück zum Menü" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
-        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="Hier sollen dann mal die Regeln drin stehen" TextWrapping="Wrap"/>
+        <Button Content="Zurück zum Menü" HorizontalAlignment="Left" VerticalAlignment="Top" Height="54" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
+        <TextBlock Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
+            Was ist ein Set? <LineBreak/>
+            Man kann verschiedene Varianten dieses Spiels spielen. <LineBreak/>
+            Sie alle drehen sich aber um das namensgebende Set. Ein Set besteht aus drei Karten, <LineBreak/>
+            die für jede Eigenschaft die Bedingung erfüllen müssen, dass alle Karten in dieser <LineBreak/>
+            Eigenschaft übereinstimmen oder dass keine zwei der Karten in dieser Eigenschaft <LineBreak/>
+            übereinstimmen. Das heißt also: <LineBreak/>
+    Alle Karten zeigen dasselbe Symbol oder jede zeigt ein anderes Symbol. <LineBreak/>
+    Alle Karten zeigen dieselbe Anzahl an Symbolen oder jede zeigt eine andere Anzahl. <LineBreak/>
+    Alle Karten zeigen Symbole derselben Farbe oder jedes Symbol hat eine andere Farbe. <LineBreak/>
+    Alle Karten zeigen Symbole mit derselben Füllung oder jedes Symbol hat eine andere <LineBreak/>Füllung. <LineBreak/>
+    Dabei wird jede Eigenschaft unabhängig von den anderen betrachtet. <LineBreak/>
+    Äquivalent lässt sich der Begriff „Set“ auch wie folgt in nur einem Satz definieren: <LineBreak/>
+    Drei Karten bilden genau dann ein Set, wenn keine der vier Eigenschaften bei genau <LineBreak/>
+    zwei der drei Karten die gleiche Ausprägung erfährt. <LineBreak/>
+    Zieht man zwei beliebige Karten aus dem Spiel, dann gibt es genau eine weitere Karte, <LineBreak/>
+    die beide zu einem Set ergänzt. Drei Karten, die ein Set ergeben, könnten zum Beispiel <LineBreak/>
+    sein: <LineBreak/>
+    drei rote gefüllte Ovale, <LineBreak/>
+    eine rote leere Raute, <LineBreak/>
+    zwei rote gestreifte Schnörkel. <LineBreak/>
+Unterschiedliche Anzahl, gleiche Farbe, unterschiedliche Formen, unterschiedliche <LineBreak/>
+            Füllungen.
+        </TextBlock>
     </Grid>
 </UserControl>
