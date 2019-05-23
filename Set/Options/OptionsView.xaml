@@ -17,9 +17,6 @@
             <RowDefinition Height="822*"/>
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="2" Grid.Row="1">
-            <Button Content="Farben speichern" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="100" Width="170"/>
-        </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -54,5 +51,13 @@
             </Grid>
         </Grid>
         <Button Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text = "Spielmodus:" Foreground="White"  FontSize="18"/>
+            <RadioButton x:Name = "gamemode1"  Checked = "HandleCheck"
+            GroupName="Gender" Content = "Normales Spiel" Foreground="White" FontSize="14"/>
+            <RadioButton x:Name = "Gamemode2"  Checked = "HandleCheck" 
+            GroupName = "Gender" Content = "Gegen die Zeit" Foreground="White" FontSize="14"/>
+            <TextBlock x:Name = "choiceTextBlock"  />
+        </StackPanel>
     </Grid>
 </UserControl>
