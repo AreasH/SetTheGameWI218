@@ -9,7 +9,7 @@ namespace Set
 
     class Game
     {
-        #region Fields
+    
         GameViewModel _gameViewModel;
         Options options;
         List<Card> AllCards;  //Includes really all Cards possible, even if not used in this game instance
@@ -32,7 +32,8 @@ namespace Set
         public int NumberOfPossibleSets1 { get => NumberOfPossibleSets; set => NumberOfPossibleSets = value; }
         public int CountSelectedCards1 { get => CountSelectedCards; set => CountSelectedCards = value; }
 
-        
+       
+
         public Game(GameViewModel g, Object options)
         {
             _gameViewModel = g;
