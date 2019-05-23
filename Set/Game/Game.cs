@@ -12,6 +12,7 @@ namespace Set
         #region Fields
         GameViewModel _gameViewModel;
         Options options;
+        private string gameMode;
         List<Card> AllCards;  //Includes really all Cards possible, even if not used in this game instance
         List<Card> Playset; //Includes only the 81 Selected Cards that are used for this game instance
         List<Card> foundSets; // Includes all Cards that were found to be a set (found by the player)
@@ -34,59 +35,71 @@ namespace Set
         public int NumberOfPossibleSets1 { get => NumberOfPossibleSets; set => NumberOfPossibleSets = value; }
         public int CountSelectedCards1 { get => CountSelectedCards; set => CountSelectedCards = value; }
 
-        
+        public int Time
+        {
+            get { return time; }
+            set
+            {
+                time = value;
+                _gameViewModel.UpdateTime();
+            }
+        }
+
         public Game(GameViewModel g, Object options)
         {
             _gameViewModel = g;
             this.options = (Options) options;
-            initializeCards();
-            generatePlaySet();
-            initializeTimer();
-            timer.Start();
-
-            SetCards = new List<Card>();
-
-            Random rnd = new Random();
-            int i = rnd.Next(Playset1.Count);
-            while (SetCards.Count<=12)
-            {
-                if (!SetCards.Contains(Playset1[i]))
-                {
-                    SetCards.Add(Playset1[i]);
-                    Playset1.RemoveAt(i);
-                    i = rnd.Next(Playset1.Count);
-                }
-            }
-            setImageSource();
-            SelectedCards = new List<Card>();
+            StartNewGame();
         }
          
         public void StartNewGame()
         {
+            gameMode = options.SelectedGameMode;
+            initalizeAllCards();
             generatePlaySet();
-            SetCards.Clear();
+            SetCards = null;
             refreshSetCards();
             setImageSource();
+            initializeTimer();
+            timer.Start();
         }
 
         public void refreshSetCards()
         {
-
-            Random rnd = new Random();
-            int i = rnd.Next(Playset1.Count);
-            while (SetCards.Count <= 12)
+            if(SetCards == null)
             {
-                if (!SetCards.Contains(Playset1[i]))
+                Random rnd = new Random();
+                int i = rnd.Next(Playset1.Count);
+                SetCards = new List<Card>();
+                while (SetCards.Count < 12)
                 {
-                    SetCards.Add(Playset1[i]);
-                    Playset1.RemoveAt(i);
+
                     i = rnd.Next(Playset1.Count);
+                    if (!SetCards.Contains(Playset1[i]))
+                    {
+                        SetCards.Add(Playset1[i]);
+                        Playset1.RemoveAt(i);
+                    }
                 }
             }
+            for(int i=0; i < SetCards.Count(); i++)
+            {
+                if(SetCards[i].Selected)
+                {
+                    Random rnd = new Random();
+                    int r = rnd.Next(Playset1.Count);
+                    SetCards.RemoveAt(i);
+                    SetCards.Insert(i,Playset1[r]);
+                    Playset1.RemoveAt(r);
+                }
+            }
+            
+            _gameViewModel.UpdateCardsLeft();
+            _gameViewModel.UpdateNumberOfPossibleSets();
             setImageSource();
-        }
+        } //If SetCards is smaller than 12, get some new Cards from the 81 Cards.
 
-        public void initializeCards()
+        public void initalizeAllCards()
         {
             //Build AllCards
             AllCards1 = new List<Card>();
@@ -279,9 +292,9 @@ namespace Set
             AllCards1.Add(new Card("Images/square_red_striped_1.png"));
             AllCards1.Add(new Card("Images/square_red_striped_2.png"));
             AllCards1.Add(new Card("Images/square_red_striped_3.png"));
-        }
+        } //All (currently 189) Cards are being set with the help of the image Source
 
-        public void generatePlaySet()
+        public void generatePlaySet() //if theres no PlaySet, generate a new one and fill it with the correctly colored cards.
         {
             if (Playset1 == null)
                 Playset1 = new List<Card>();
@@ -293,9 +306,7 @@ namespace Set
                     }
             }
          
-        }
-
-        
+        } 
 
         public void setImageSource() //Sets the Image Source of the Button in the ViewModel by using the ButtonImageSource properties
         {
@@ -319,7 +330,10 @@ namespace Set
 
         public void CardSelected(int i) //Card at index i from setCards is added/removed to the selectedCards.
         {
-            
+            if(SelectedCards == null)
+            {
+                SelectedCards = new List<Card>();
+            }
             if(SelectedCards.Contains(SetCards[i]))
             {
                 SelectedCards.Remove(SetCards[i]);
@@ -335,12 +349,7 @@ namespace Set
                 {
                     if(IsASet(SelectedCards[0], SelectedCards[1], SelectedCards[2]))
                     {
-                        Playset1 = Playset1.Except(SelectedCards).ToList();
-                        SetCards = SetCards.Except(SelectedCards).ToList();
-                    }
-                    foreach(Card card in SelectedCards)
-                    {
-                        card.Selected = false;
+                        refreshSetCards();
                     }
                     SelectedCards.Clear();
                     foreach (Card card in Playset1)
@@ -357,18 +366,19 @@ namespace Set
         #region FindOutNumbersOfPossibleSets
         public int FindOutNumberOfPossibleSets()
         {
+            
             int numberOfSets = 0;
             for (int i = 0; i < setCards.Count; i++)
             {
-                for (int j = 0; j < setCards.Count; j++)
+                for (int j = 0; j < setCards.Count-1; j++)
                 {
                     if (i == j)
                     {
                         j++;
                     }
-                    for (int k = 0; k < setCards.Count; k++)
+                    for (int k = 0; k < setCards.Count-1; k++)
                     {
-                        if (j == k)
+                        if (j == k || i==k)
                         {
                             k++;
                         }
@@ -442,17 +452,20 @@ namespace Set
 
         public void initializeTimer() {
 
+            timer = null;
             timer = new DispatcherTimer();
             timer.Tick += new EventHandler(timer_tick);
             timer.Interval = new TimeSpan (0,0,1);
 
-}
+        }
 
         public void timer_tick (object sender, EventArgs e) { //Counts the number of seconds since the game was started.
 
-            time++;
-}
+            Time = Time + 1;
+            
+        }
 
+        
 
 
 

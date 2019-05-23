@@ -10,7 +10,6 @@ namespace Set
     class MainWindowViewModel: ObservableObject, PageViewModel
     {
 
-        private DelegateCommand _changePageCommand;
         private string name = "MainWindowViewModel";
         private PageViewModel _currentPageViewModel;
         private List<PageViewModel> _pageViewModels;

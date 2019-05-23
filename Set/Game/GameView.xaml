@@ -146,7 +146,7 @@
         <Button Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
         <Button Content="Sets anzeigen" Height="192"  Grid.Row="1" VerticalAlignment="Center"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="86"  Grid.Row="2" Text="{Binding numberOfPossibleSets}" TextWrapping="Wrap" VerticalAlignment="Center" Width="161"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Height="50" Text="Zeit:         xx:yy" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Right" Height="105"  Grid.Row="1" Text="Noch x Karten im Set" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,0.333,0,0"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Height="50" Text="{Binding Time}" FontSize="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Right" Height="105"  Grid.Row="1" Text="{Binding CardsLeft}" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,0.333,0,0"/>
     </Grid>
 </UserControl>

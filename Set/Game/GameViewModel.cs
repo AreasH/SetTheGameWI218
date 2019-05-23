@@ -9,17 +9,16 @@ namespace Set
     /// <summary>
     /// This class is used to connect all game logic to the view. 
     /// </summary>
-    class GameViewModel: ObservableObject, PageViewModel
+    class GameViewModel : ObservableObject, PageViewModel
     {
         public GameViewModel(MainWindowViewModel mainwindow, PageViewModel options)
         {
             mwvm = mainwindow;
-            gameLogic = new Game(this,options.Data);
+            gameLogic = new Game(this, options.Data);
         }
-        
+
         #region Fields
         MainWindowViewModel mwvm;
-        Options ovm;
         Game gameLogic;
         private string name = "GameViewModel";
         #endregion
@@ -73,7 +72,7 @@ namespace Set
         {
             get
             {
-                string temp = gameLogic.SetCards[0].Selected==true ? visible : hidden;
+                string temp = gameLogic.SetCards[0].Selected == true ? visible : hidden;
                 return temp;
             }
         }
@@ -183,7 +182,7 @@ namespace Set
 
         public DelegateCommand zeroButton
         {
-            get {return new DelegateCommand(p => gameLogic.CardSelected(0)) ; }
+            get { return new DelegateCommand(p => gameLogic.CardSelected(0)); }
         }
 
         public DelegateCommand oneButton
@@ -279,7 +278,7 @@ namespace Set
                 {
                     _twoButtonImageSource = value;
                     OnPropertyChanged("twoButtonImageSource");
-                    
+
                 }
             }
         }
@@ -315,12 +314,12 @@ namespace Set
             get { return _fiveButtonImageSource; }
             set
             {
-                    if (fiveButtonImageSource != value)
-                    {
-                        _fiveButtonImageSource = value;
-                        OnPropertyChanged("fiveButtonImageSource");
-                    }
-                
+                if (fiveButtonImageSource != value)
+                {
+                    _fiveButtonImageSource = value;
+                    OnPropertyChanged("fiveButtonImageSource");
+                }
+
             }
         }
 
@@ -407,11 +406,8 @@ namespace Set
         #endregion
 
         #region Normal Properties
-        public string Name { get => name;}
+        public string Name { get => name; }
 
-         public string numberOfPossibleSets {
-            get {return " Es sind " +gameLogic.FindOutNumberOfPossibleSets().ToString()+ "Sets möglich.";}
-            }
         public Object Data { get { return gameLogic; } }
         #endregion
 
@@ -430,7 +426,38 @@ namespace Set
         }
         #endregion
 
-       
+        #region GameInfo Properties
+        public void UpdateTime()
+        {
+            OnPropertyChanged("Time");
+        }
+
+        public string Time
+        {
+            get { return gameLogic.Time.ToString(); }
+        }
+
+        public void UpdateCardsLeft()
+        {
+            OnPropertyChanged("CardsLeft");
+        }
+
+        public string CardsLeft
+        {
+            get { return "Noch " + gameLogic.Playset1.Count().ToString() + " Karten von 81 verbleibend"; }
+        }
+
+
+        public string numberOfPossibleSets
+        {
+            get { return gameLogic.FindOutNumberOfPossibleSets().ToString(); }
+        }
+
+        public void UpdateNumberOfPossibleSets()
+        {
+            OnPropertyChanged("numberOfPossibleSets");
+        }
+        #endregion
 
 
 
