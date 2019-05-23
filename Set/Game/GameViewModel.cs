@@ -412,7 +412,7 @@ namespace Set
         public string Name { get => name;}
 
          public string numberOfPossibleSets {
-            get {return " Es sind " +gameLogic.FindOutNumberOfPossibleSets().ToString()+ "Sets möglich.";}
+            get {return gameLogic.FindOutNumberOfPossibleSets().ToString();}
             }
         public Object Data { get { return gameLogic; } }
         #endregion
