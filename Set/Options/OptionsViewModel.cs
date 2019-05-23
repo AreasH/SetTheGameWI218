@@ -66,11 +66,22 @@ namespace Set
         public DelegateCommand SaveColorsCommand
         { get { return new DelegateCommand(param => data.SaveColors()); } }
 
+        public List<string> GameModes { get => data.GameModes; set => data.GameModes = value; }
+
+        public string SelectedGameMode { get => data.SelectedGameMode; set => data.SelectedGameMode = value; }
+
         public Object Data
         {  get { return data; } }
 
         public string Name { get => name; set => name = value; }
 
+        #endregion
+
+        #region methods
+        public void RefreshPage()
+        {
+            data.RefreshOptions();
+        }
         #endregion
 
         #region ToMenu

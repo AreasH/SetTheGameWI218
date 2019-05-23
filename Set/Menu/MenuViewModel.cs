@@ -49,6 +49,11 @@ namespace Set
         #endregion
 
         #region Methods
+
+
+        public void RefreshPage()
+        { }
+
         public void StartNewGame()
         {
             mwvm.ChangePageTo("GameViewModel");

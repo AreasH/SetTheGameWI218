@@ -71,10 +71,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Options\Options.cs" />
-    <Compile Include="RulesView.xaml.cs">
+    <Compile Include="Rules\RulesView.xaml.cs">
       <DependentUpon>RulesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RulesViewModel.cs" />
+    <Compile Include="Rules\RulesViewModel.cs" />
     <Page Include="Game\GameView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,7 +106,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RulesView.xaml">
+    <Page Include="Rules\RulesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,6 +140,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

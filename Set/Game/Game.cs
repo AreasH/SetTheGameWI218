@@ -23,6 +23,8 @@ namespace Set
         DispatcherTimer timer; //timer displaying the time passed by since the game was started (in seconds). 
         int time = 0;
 
+        #endregion
+
         public List<Card> AllCards1 { get => AllCards; set => AllCards = value; }
         public List<Card> Playset1 { get => Playset; set => Playset = value; }
         public List<Card> FoundSets { get => foundSets; set => foundSets = value; }
@@ -41,10 +43,12 @@ namespace Set
             generatePlaySet();
             initializeTimer();
             timer.Start();
+
             SetCards = new List<Card>();
+
             Random rnd = new Random();
             int i = rnd.Next(Playset1.Count);
-            while(SetCards.Count<=12)
+            while (SetCards.Count<=12)
             {
                 if (!SetCards.Contains(Playset1[i]))
                 {
@@ -57,6 +61,31 @@ namespace Set
             SelectedCards = new List<Card>();
         }
          
+        public void StartNewGame()
+        {
+            generatePlaySet();
+            SetCards.Clear();
+            refreshSetCards();
+            setImageSource();
+        }
+
+        public void refreshSetCards()
+        {
+
+            Random rnd = new Random();
+            int i = rnd.Next(Playset1.Count);
+            while (SetCards.Count <= 12)
+            {
+                if (!SetCards.Contains(Playset1[i]))
+                {
+                    SetCards.Add(Playset1[i]);
+                    Playset1.RemoveAt(i);
+                    i = rnd.Next(Playset1.Count);
+                }
+            }
+            setImageSource();
+        }
+
         public void initializeCards()
         {
             //Build AllCards
@@ -254,8 +283,11 @@ namespace Set
 
         public void generatePlaySet()
         {
+            if (Playset1 == null)
+                Playset1 = new List<Card>();
+            Playset1.Clear();
             foreach (Card card in AllCards1) {
-                if ((card.Color=Options.getColors[0]) ||(card.Color=Options.getColors[1]) || (card.Color=Options.getColors[2]) ) { // Note for Andi: Please implement the method Options.getColors which returns an Array containing the 3 selected colors
+                if ((card.Color==options.Color[0]) || (card.Color== options.Color[1]) || (card.Color== options.Color[2]) ) { // Note for Andi: Please implement the method Options.getColors which returns an Array containing the 3 selected colors Edit.: Done.
                 
               Playset1.Add(card);
                     }

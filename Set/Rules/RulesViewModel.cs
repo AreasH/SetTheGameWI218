@@ -26,6 +26,7 @@ namespace Set
 
         public Object Data { get; }
 
+
         #endregion
 
         #region ToMenu
@@ -42,6 +43,11 @@ namespace Set
             mwvm.ChangePageTo("MenuViewModel");
         }
 
+        #endregion
+
+        #region Methods
+        public void RefreshPage()
+        { }
         #endregion
     }
 }
