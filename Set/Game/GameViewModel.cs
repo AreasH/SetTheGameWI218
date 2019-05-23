@@ -16,7 +16,9 @@ namespace Set
             mwvm = mainwindow;
             gameLogic = new Game(this,options.Data);
         }
-        
+
+       
+
         #region Fields
         MainWindowViewModel mwvm;
         Options ovm;

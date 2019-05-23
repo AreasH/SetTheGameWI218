@@ -8,9 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       >
 
-    <Grid>
+    <Grid Background="MediumSeaGreen">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="152*"/>
             <ColumnDefinition Width="437*"/>
             <ColumnDefinition Width="152*"/>
         </Grid.ColumnDefinitions>
@@ -29,19 +29,20 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-              
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
 
+
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" 
                     BorderBrush="{Binding zeroButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding zeroButton}">
-             <StackPanel Orientation="Horizontal" >
+                <StackPanel Orientation="Horizontal" >
                     <Grid>
                         <Image Source="{Binding zeroButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}" Stretch="Uniform"/>
                     </Grid>
-        </StackPanel> </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Background="White" 
                   BorderBrush="{Binding oneButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding oneButton}">
                 <StackPanel Orientation="Horizontal">
@@ -49,8 +50,8 @@
                         <Image Source="{Binding oneButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0" Background="White" 
                   BorderBrush="{Binding twoButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding twoButton}">
                 <StackPanel Orientation="Horizontal">
@@ -58,8 +59,8 @@
                         <Image Source="{Binding twoButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Background="White" 
                   BorderBrush="{Binding threeButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding threeButton}">
                 <StackPanel Orientation="Horizontal">
@@ -68,7 +69,7 @@
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                 </StackPanel>
-          </Button>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Background="White" 
                   BorderBrush="{Binding fourButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding fourButton}">
                 <StackPanel Orientation="Horizontal">
@@ -77,7 +78,7 @@
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                 </StackPanel>
-          </Button>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1" Background="White" 
                   BorderBrush="{Binding fiveButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding fiveButton}">
                 <StackPanel Orientation="Horizontal">
@@ -85,8 +86,8 @@
                         <Image Source="{Binding fiveButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2" Background="White" 
                   BorderBrush="{Binding sixButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding sixButton}">
                 <StackPanel Orientation="Horizontal">
@@ -94,8 +95,8 @@
                         <Image Source="{Binding sixButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2" Background="White" 
                   BorderBrush="{Binding sevenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding sevenButton}">
                 <StackPanel Orientation="Horizontal">
@@ -103,8 +104,8 @@
                         <Image Source="{Binding sevenButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2" Background="White" 
                   BorderBrush="{Binding eightButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding eightButton}">
                 <StackPanel Orientation="Horizontal">
@@ -112,8 +113,8 @@
                         <Image Source="{Binding eightButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Background="White" 
                   BorderBrush="{Binding nineButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding nineButton}">
                 <StackPanel Orientation="Horizontal">
@@ -121,8 +122,8 @@
                         <Image Source="{Binding nineButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3" Background="White" 
                   BorderBrush="{Binding tenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding tenButton}">
                 <StackPanel Orientation="Horizontal">
@@ -130,8 +131,8 @@
                         <Image Source="{Binding tenButtonImageSource,Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
+                </StackPanel>
+            </Button>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3" Background="White" 
                   BorderBrush="{Binding elevenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding elevenButton}">
                 <StackPanel Orientation="Horizontal">
@@ -139,14 +140,38 @@
                         <Image Source="{Binding elevenButtonImageSource, Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-            </StackPanel>
-          </Button>
-
+                </StackPanel>
+            </Button>
         </Grid>
-        <Button Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
-        <Button Content="Sets anzeigen" Height="192"  Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="86"  Grid.Row="2" Text="{Binding numberOfPossibleSets}" TextWrapping="Wrap" VerticalAlignment="Center" Width="161"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Height="50" Text="Zeit:         xx:yy" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Right" Height="105"  Grid.Row="1" Text="Noch x Karten im Set" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,0.333,0,0"/>
+        <Button Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
+        <Button Content="Gefundene Sets" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="150" Width="150"/>
+        <Border BorderThickness="4 4 0 4" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="82" Grid.Column="2" Grid.Row="2">
+            <TextBlock Text="Sets möglich:" TextWrapping="Wrap" Foreground="White"/>
+        </Border>
+        <Border BorderThickness="0 4 4 4" BorderBrush="Black" HorizontalAlignment="Right" VerticalAlignment="Top" Height="92" Width="82" Grid.Column="2" Grid.Row="2">
+            <TextBlock Text="x" TextWrapping="Wrap" Foreground="White"/>
+        </Border>
+        <Border BorderThickness="4 4 0 4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" Width="82" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBlock Background="MediumSeaGreen" Text="Karten übrig:" TextWrapping="Wrap" Foreground="White"/>
+        </Border>
+        <Border BorderThickness="0 4 4 4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" Width="82" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <TextBlock Background="MediumSeaGreen" TextWrapping="Wrap" Foreground="White">
+                x
+            </TextBlock>
+        </Border>
+        <Grid Grid.Column="1"  Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="107*"/>
+                <ColumnDefinition Width="128*"/>
+                <ColumnDefinition Width="128*"/>
+                <ColumnDefinition Width="107*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="4 4 0 4" BorderBrush="Black" Height="30" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Text="Zeit:" TextWrapping="Wrap" Width="144"/>
+            </Border>
+            <Border BorderThickness="0 4 4 4" BorderBrush="Black" Height="30" Grid.Column="2" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Text="xx:yy" TextWrapping="Wrap" Width="144"/>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>
