@@ -15,7 +15,10 @@ namespace Set
         string Name { get; }
 
         Object Data { get; }
+
+        void RefreshPage();
     }
+
 
     
 }
