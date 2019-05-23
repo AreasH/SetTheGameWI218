@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Threading;
+
+
+
 namespace Set
 {
 
@@ -23,7 +26,7 @@ namespace Set
         DispatcherTimer timer; //timer displaying the time passed by since the game was started (in seconds). 
         int time = 0;
 
-        #endregion
+       
 
         public List<Card> AllCards1 { get => AllCards; set => AllCards = value; }
         public List<Card> Playset1 { get => Playset; set => Playset = value; }
@@ -75,7 +78,7 @@ namespace Set
 
             Random rnd = new Random();
             int i = rnd.Next(Playset1.Count);
-            while (SetCards.Count <= 12)
+            while (SetCards.Count < 12)
             {
                 if (!SetCards.Contains(Playset1[i]))
                 {
@@ -357,26 +360,38 @@ namespace Set
 
         #region FindOutNumbersOfPossibleSets
         public int FindOutNumberOfPossibleSets()
-        {
-            int numberOfSets = 0;
+        {  
+           List<String> foundSets = new List<String>();
+            
             for (int i = 0; i < setCards.Count; i++)
             {
+                
+                
                 for (int j = 0; j < setCards.Count; j++)
                 {
-                    if (i == j)
-                    {
-                        j++;
-                    }
+                   
+                    if (i==j) {
+                        continue;
+}
                     for (int k = 0; k < setCards.Count; k++)
                     {
-                        if (j == k)
-                        {
-                            k++;
-                        }
+                       if(i==k) {
+                            continue;
+}
+
+                       if (j==k) {
+                            continue;
+}
+                   
                         if (IsASet(setCards[i], setCards[j], setCards[k]))
                         {
+                            
+                            String testSet = orderInt (i,j,k);
 
-                            numberOfSets++;
+                            if (!foundSets.Contains(testSet)) {
+                                foundSets.Add(testSet);
+                          
+                                }
 
                         }
 
@@ -390,9 +405,42 @@ namespace Set
 
             }
 
-            return numberOfSets;
+            return foundSets.Count();
 
         }
+
+        public String orderInt(int a, int b, int c)
+        {
+            int number1 = a;
+            int number2 = b;
+            int number3 = c;
+
+
+            if (number1 > number2)
+            {
+                int temp = number1;
+                number1 = number2;
+                number2 = temp;
+            }
+
+            if (number2 > number3)
+            {
+                int temp = number2;
+                number2 = number3;
+                number3 = temp;
+            }
+
+            if (number1 > number2)
+            {
+                int temp = number1;
+                number1 = number2;
+                number2 = temp;
+            }
+
+            return number1.ToString() + number2.ToString() + number3.ToString();
+        }
+
+
         #endregion
 
         #region IsASet
@@ -452,6 +500,7 @@ namespace Set
         public void timer_tick (object sender, EventArgs e) { //Counts the number of seconds since the game was started.
 
             time++;
+
 }
 
 
