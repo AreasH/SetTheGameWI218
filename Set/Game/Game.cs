@@ -27,8 +27,10 @@ namespace Set
         int foundSets;
         DispatcherTimer timer; //timer displaying the time passed by since the game was started (in seconds). 
         int timeseconds = 0;
+        int playSetEmptyCount;
 
-       
+
+
 
         public List<Card> AllCards1 { get => AllCards; set => AllCards = value; }
         public List<Card> Playset1 { get => Playset; set => Playset = value; }
@@ -39,6 +41,8 @@ namespace Set
         public List<Card> SelectedCards { get => selectedCards; set => selectedCards = value; }
         public int NumberOfPossibleSets1 { get => NumberOfPossibleSets; set => NumberOfPossibleSets = value; }
         public int CountSelectedCards1 { get => CountSelectedCards; set => CountSelectedCards = value; }
+        public int PlaySetEmptyCount { get => playSetEmptyCount; set => playSetEmptyCount = value; }
+
 
         public int TimeSeconds
         {
@@ -67,7 +71,6 @@ namespace Set
         }
 
 
-
         public Game(GameViewModel g, Object options)
         {
             _gameViewModel = g;
@@ -83,6 +86,7 @@ namespace Set
             gameMode = options.SelectedGameMode;
             generatePlaySet();
             FoundSets = 0;
+            PlaySetEmptyCount = 0;
             SetCards = null;
             LastFoundSet = null;
             refreshSetCards();
@@ -123,9 +127,18 @@ namespace Set
                             Playset1.RemoveAt(r);
                         }
                     }
-                    if(Playset1.Count()==0)
+                    if(Playset1.Count()==0) //if a Player manages to find all 23 sets, adding xBlocks to the SetCards. Those cannot be compared.
                     {
-                        Playset1.AddRange(AllCards1.Where(card => card.Shape == "block").ToList());
+                        if(PlaySetEmptyCount == 0)
+                        {
+                            PlaySetEmptyCount = 1;
+                            Playset1.AddRange(AllCards1.Where(card => card.Shape == "block").ToList());
+                        }
+                        else
+                        {
+                            EndGame();
+                        }
+                        
                     }
                     _gameViewModel.UpdateFoundSets();
                     _gameViewModel.UpdateCardsLeft();
@@ -555,7 +568,7 @@ namespace Set
 
         public void EndGame()
         {
-            //Open Message Box
+            _gameViewModel.ChangeToMenu();
         }
 
         public void initializeTimer() {
@@ -579,7 +592,7 @@ namespace Set
                 TimeSeconds = TimeSeconds - 1;
                 if(TimeSeconds == 0)
                 {
-                    //EndGame();
+                    EndGame();
                 }
             }
             

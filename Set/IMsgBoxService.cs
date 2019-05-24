@@ -9,7 +9,6 @@ namespace Set
         public interface IMsgBoxService
         {
             void ShowNotification(string message);
-            bool AskForConfirmation(string message);
             
         }
 

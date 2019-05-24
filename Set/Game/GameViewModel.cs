@@ -53,10 +53,7 @@ namespace Set
             gameLogic.StartNewGame();
         }
 
-        public void EndGame()
-        {
-            messageService.ShowNotification("Your Score has been x. Nice!");
-        }
+       
 
         public void RefreshSelection()
         {
@@ -452,7 +449,7 @@ namespace Set
 
         public void ChangeToMenu()
         {
-            EndGame();
+            messageService.ShowNotification(gameLogic.FoundSets.ToString());
             mwvm.ChangePageTo("MenuViewModel");
         }
         #endregion
@@ -501,9 +498,6 @@ namespace Set
 
         
         #endregion
-
-
-
 
 
     }

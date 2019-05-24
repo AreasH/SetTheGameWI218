@@ -11,14 +11,9 @@ namespace Set
         {
             public void ShowNotification(string message)
             {
-                MessageBox.Show(message, "Notification", MessageBoxButton.OK, MessageBoxImage.Hand);
+                MessageBox.Show("Du hast dieses Spiel "+ message + " Sets gefunden.", "Spiel beendet", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
-            public bool AskForConfirmation(string message)
-            {
-                MessageBoxResult result = MessageBox.Show(message, "Are you sure?", MessageBoxButton.OKCancel);
-                return result.HasFlag(MessageBoxResult.OK);
-            }
         }
 
     
