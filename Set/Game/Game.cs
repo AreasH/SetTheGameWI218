@@ -26,7 +26,7 @@ namespace Set
         int CountSelectedCards = 0;
         int foundSets;
         DispatcherTimer timer; //timer displaying the time passed by since the game was started (in seconds). 
-        int time = 0;
+        int timeseconds = 0;
 
        
 
@@ -40,15 +40,32 @@ namespace Set
         public int NumberOfPossibleSets1 { get => NumberOfPossibleSets; set => NumberOfPossibleSets = value; }
         public int CountSelectedCards1 { get => CountSelectedCards; set => CountSelectedCards = value; }
 
-        public int Time
+        public int TimeSeconds
         {
-            get { return time; }
+            get { return timeseconds; }
             set
             {
-                time = value;
+                timeseconds = value;
                 _gameViewModel.UpdateTime();
             }
         }
+
+        public string Time
+        {
+            get
+            {
+                string Hrs;    //number of Hours
+                string Min;    //number of Minutes
+                string Sec;    //number of Seconds
+
+                Sec = (TimeSeconds % 60 <10) ? "0"+ (TimeSeconds % 60).ToString() : (TimeSeconds % 60).ToString();
+                Min = (TimeSeconds / 60 < 10) ? "0" + (TimeSeconds / 60).ToString() : (TimeSeconds / 60).ToString();
+                Hrs = (TimeSeconds / 3600 < 10) ? "0" + (TimeSeconds / 3600).ToString() : (TimeSeconds /3600).ToString();
+
+                return Hrs.ToString() + " : " + Min.ToString() + " : " + Sec.ToString();
+            }
+        }
+
 
 
         public Game(GameViewModel g, Object options)
@@ -71,7 +88,7 @@ namespace Set
             LastFoundSet = null;
             refreshSetCards();
             setImageSource();
-            Time = 0;
+            TimeSeconds = gameMode == "Normal" ? 0 : 300;
 
         }
 
@@ -425,11 +442,7 @@ namespace Set
                                 }
 
                         }
-
-
                     }
-
-
                 }
 
 
@@ -541,7 +554,20 @@ namespace Set
 
         public void timer_tick (object sender, EventArgs e) { //Counts the number of seconds since the game was started.
 
-            Time = Time + 1;
+            if (gameMode == "Normal")
+            {
+                TimeSeconds = TimeSeconds + 1;
+            }
+
+            else
+            {
+                TimeSeconds = TimeSeconds - 1;
+                if(TimeSeconds == 0)
+                {
+                    //EndGame();
+                }
+            }
+            
             
         }
 

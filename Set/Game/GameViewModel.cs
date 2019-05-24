@@ -459,7 +459,7 @@ namespace Set
 
         public string Time
         {
-            get { return gameLogic.Time.ToString(); }
+            get { return gameLogic.Time; }
         }
 
         public void UpdateCardsLeft()
