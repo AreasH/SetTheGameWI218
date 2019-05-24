@@ -72,6 +72,7 @@ namespace Set
         {
             _gameViewModel = g;
             this.options = (Options) options;
+            initalizeAllCards();
             StartNewGame();
             initializeTimer();
             timer.Start();
@@ -80,8 +81,6 @@ namespace Set
         public void StartNewGame()
         {
             gameMode = options.SelectedGameMode;
-            
-            initalizeAllCards();
             generatePlaySet();
             FoundSets = 0;
             SetCards = null;
@@ -94,39 +93,45 @@ namespace Set
 
         public void refreshSetCards()
         {
-            //This one is used at every refresh of the game
-            if(SetCards == null || SetCards.Count() == 0)
-            {
-                Random rnd = new Random();
-                int i = rnd.Next(Playset1.Count);
-                SetCards = new List<Card>();
-                while (SetCards.Count < 12)
-                {
-
-                    i = rnd.Next(Playset1.Count);
-                    if (!SetCards.Contains(Playset1[i]))
+                        
+                    //This one is used at every refresh of the game
+                    if(SetCards == null || SetCards.Count() == 0)
                     {
-                        SetCards.Add(Playset1[i]);
-                        Playset1.RemoveAt(i);
+                        Random rnd = new Random();
+                        int i = rnd.Next(Playset1.Count);
+                        SetCards = new List<Card>();
+                        while (SetCards.Count < 12)
+                        {
+
+                            i = rnd.Next(Playset1.Count);
+                            if (!SetCards.Contains(Playset1[i]))
+                            {
+                                SetCards.Add(Playset1[i]);
+                                Playset1.RemoveAt(i);
+                            }
+                        }
                     }
-                }
-            }
-            //This one is used while the game runs (when user found a set)
-            for (int i=0; i < SetCards.Count(); i++)
-            {
-                if(SetCards[i].Selected)
-                {
-                    Random rnd = new Random();
-                    int r = rnd.Next(Playset1.Count);
-                    SetCards.RemoveAt(i);
-                    SetCards.Insert(i,Playset1[r]);
-                    Playset1.RemoveAt(r);
-                }
-            }
-            _gameViewModel.UpdateFoundSets();
-            _gameViewModel.UpdateCardsLeft();
-            _gameViewModel.UpdateNumberOfPossibleSets();
-            setImageSource();
+                    //This one is used while the game runs (when user found a set)
+                    for (int i=0; i < SetCards.Count(); i++)
+                    {
+                        if(SetCards[i].Selected)
+                        {
+                            Random rnd = new Random();
+                            int r = rnd.Next(Playset1.Count);
+                            SetCards.RemoveAt(i);
+                            SetCards.Insert(i,Playset1[r]);
+                            Playset1.RemoveAt(r);
+                        }
+                    }
+                    if(Playset1.Count()==0)
+                    {
+                        Playset1.AddRange(AllCards1.Where(card => card.Shape == "block").ToList());
+                    }
+                    _gameViewModel.UpdateFoundSets();
+                    _gameViewModel.UpdateCardsLeft();
+                    _gameViewModel.UpdateNumberOfPossibleSets();
+                    setImageSource();
+            
         } //If SetCards is smaller than 12, get some new Cards from the 81 Cards.
 
         public void initalizeAllCards()
@@ -322,6 +327,20 @@ namespace Set
             AllCards1.Add(new Card("Images/square_red_striped_1.png"));
             AllCards1.Add(new Card("Images/square_red_striped_2.png"));
             AllCards1.Add(new Card("Images/square_red_striped_3.png"));
+
+            //Add the X Blocks to All Cards.
+            AllCards1.Add(new Card("Images/block_x_red_1.png"));
+            AllCards1.Add(new Card("Images/block_x_red_2.png"));
+            AllCards1.Add(new Card("Images/block_x_red_3.png"));
+            AllCards1.Add(new Card("Images/block_x_red_4.png"));
+            AllCards1.Add(new Card("Images/block_x_red_5.png"));
+            AllCards1.Add(new Card("Images/block_x_red_6.png"));
+            AllCards1.Add(new Card("Images/block_x_red_7.png"));
+            AllCards1.Add(new Card("Images/block_x_red_8.png"));
+            AllCards1.Add(new Card("Images/block_x_red_9.png"));
+            AllCards1.Add(new Card("Images/block_x_red_10.png"));
+            AllCards1.Add(new Card("Images/block_x_red_11.png"));
+            AllCards1.Add(new Card("Images/block_x_red_12.png"));
         } //All (currently 189) Cards are being set with the help of the image Source
 
         public void generatePlaySet() //if theres no PlaySet, generate a new one and fill it with the correctly colored cards.
@@ -340,8 +359,6 @@ namespace Set
 
         public void setImageSource() //Sets the Image Source of the Button in the ViewModel by using the ButtonImageSource properties
         {
-
-            
             _gameViewModel.zeroButtonImageSource    = setCards[0].ImageSource;
             _gameViewModel.oneButtonImageSource     = setCards[1].ImageSource;
             _gameViewModel.twoButtonImageSource     = setCards[2].ImageSource;
@@ -354,8 +371,6 @@ namespace Set
             _gameViewModel.nineButtonImageSource    = setCards[9].ImageSource;
             _gameViewModel.tenButtonImageSource     = setCards[10].ImageSource;
             _gameViewModel.elevenButtonImageSource  = setCards[11].ImageSource;
-            
-
         }
 
         public void CardSelected(int i) //Card at index i from setCards is added/removed to the selectedCards.
@@ -540,7 +555,7 @@ namespace Set
 
         public void EndGame()
         {
-
+            //Open Message Box
         }
 
         public void initializeTimer() {
@@ -571,7 +586,6 @@ namespace Set
             
         }
 
-        
 
 
 

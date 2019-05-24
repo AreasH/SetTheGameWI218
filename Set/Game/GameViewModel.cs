@@ -12,15 +12,17 @@ namespace Set
     /// </summary>
     class GameViewModel : ObservableObject, PageViewModel
     {
-        public GameViewModel(MainWindowViewModel mainwindow, PageViewModel options)
+        public GameViewModel(MainWindowViewModel mainwindow, PageViewModel options, IMsgBoxService msgboxService)
         {
             mwvm = mainwindow;
+            messageService = msgboxService; 
             gameLogic = new Game(this, options.Data);
         }
 
         #region Fields
         MainWindowViewModel mwvm;
         Game gameLogic;
+        private IMsgBoxService messageService;
         private string name = "GameViewModel";
         #endregion
 
@@ -51,7 +53,10 @@ namespace Set
             gameLogic.StartNewGame();
         }
 
-        
+        public void EndGame()
+        {
+            messageService.ShowNotification("Your Score has been x. Nice!");
+        }
 
         public void RefreshSelection()
         {
@@ -447,6 +452,7 @@ namespace Set
 
         public void ChangeToMenu()
         {
+            EndGame();
             mwvm.ChangePageTo("MenuViewModel");
         }
         #endregion
@@ -492,6 +498,8 @@ namespace Set
         {
             get { return "Schon " +gameLogic.FoundSets.ToString()+ " Sets gefunden!"; }
         }
+
+        
         #endregion
 
 

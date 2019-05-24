@@ -70,7 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MvvmMessageBoxEventArgs.cs" />
+    <Compile Include="IMsgBoxService.cs" />
+    <Compile Include="MsgBoxService .cs" />
     <Compile Include="Options\Options.cs" />
     <Compile Include="Rules\RulesView.xaml.cs">
       <DependentUpon>RulesView.xaml</DependentUpon>

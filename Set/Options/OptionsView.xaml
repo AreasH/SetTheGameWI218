@@ -51,7 +51,7 @@
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}" 
                       HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
-                <Button Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Farben speichern" IsEnabled="{Binding SaveColorsCommandVisibility, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Farben speichern" IsEnabled="{Binding SaveColorsCommandVisibility, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SaveColorsCommand}"/>
                 <ComboBox Grid.Row="1" Grid.Column="0"
                                       ItemsSource="{Binding GameModes, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding SelectedGameMode,

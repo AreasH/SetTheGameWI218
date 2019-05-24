@@ -9,17 +9,19 @@ namespace Set
 {
     class MainWindowViewModel: ObservableObject, PageViewModel
     {
-
+        
         private string name = "MainWindowViewModel";
         private PageViewModel _currentPageViewModel;
         private List<PageViewModel> _pageViewModels;
+        private IMsgBoxService messageService;
 
         public MainWindowViewModel()
         {
             // Add available pages
+            messageService = new MsgBoxService();
             PageViewModels.Add(new MenuViewModel(this));
             PageViewModels.Add(new OptionsViewModel(this));
-            PageViewModels.Add(new GameViewModel(this, PageViewModels[1]));
+            PageViewModels.Add(new GameViewModel(this, PageViewModels[1], messageService));
             PageViewModels.Add(new RulesViewModel(this));
 
             // Set starting page
