@@ -16,7 +16,6 @@ namespace Set
             FirstSelectedColor = "red";  //Default colors for the cards of the playset
             SecondSelectedColor = "green";
             ThirdSelectedColor = "blue"; //Contains the colors of the playset cards.
-
         }
 
         #region Fields

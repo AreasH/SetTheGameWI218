@@ -71,6 +71,7 @@ namespace Set
 
         public void ExitProgram()
         {
+            System.Environment.Exit(1);
         }
 
 

@@ -144,7 +144,23 @@
             </Button>
         </Grid>
         <Button Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
-        <Button Content="Gefundene Sets" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="150" Width="150"/>
+        <TextBlock Grid.Row="1" VerticalAlignment="Top" Margin="0,50,0,0" Text="{Binding FoundSets}" FontSize="14" Background="White" MinHeight="40"/>
+        <Grid Grid.Row="1" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="MediumSeaGreen" Grid.Column="0" BorderThickness="3" >
+                <Image  Source="{Binding firstCardFoundSetImage}" Stretch="Uniform" />
+            </Border>
+            <Border BorderBrush="MediumSeaGreen" Grid.Column="1" BorderThickness="3" >
+                <Image Source="{Binding secondCardFoundSetImage}" Stretch="Uniform"/>
+            </Border>
+            <Border BorderBrush="MediumSeaGreen" Grid.Column="2" BorderThickness="3" >
+                <Image  Source="{Binding thirdCardFoundSetImage}"  Stretch="Uniform"/>
+            </Border>
+        </Grid>
         <Border BorderThickness="4 4 0 4" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="82" Grid.Column="2" Grid.Row="2">
             <TextBlock Text="Sets möglich:" TextWrapping="Wrap" Foreground="White"/>
         </Border>
@@ -155,9 +171,9 @@
             <TextBlock Background="MediumSeaGreen" Text="Karten übrig:" TextWrapping="Wrap" Foreground="White"/>
         </Border>
         <Border BorderThickness="0 4 4 4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" Width="82" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <TextBlock Background="MediumSeaGreen" TextWrapping="Wrap" Foreground="White">
-                x
-            </TextBlock>
+            <TextBlock Background="MediumSeaGreen" TextWrapping="Wrap" Foreground="White"
+            Text="{Binding CardsLeft}"   
+            />
         </Border>
         <Grid Grid.Column="1"  Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -170,7 +186,7 @@
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Text="Zeit:" TextWrapping="Wrap" Width="144"/>
             </Border>
             <Border BorderThickness="0 4 4 4" BorderBrush="Black" Height="30" Grid.Column="2" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right">
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Text="xx:yy" TextWrapping="Wrap" Width="144"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Text="{Binding Time}" TextWrapping="Wrap" Width="144"/>
             </Border>
         </Grid>
     </Grid>

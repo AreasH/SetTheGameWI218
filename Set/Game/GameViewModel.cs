@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Set
 {
@@ -50,6 +51,8 @@ namespace Set
             gameLogic.StartNewGame();
         }
 
+        
+
         public void RefreshSelection()
         {
             OnPropertyChanged("zeroButtonSelected");
@@ -65,6 +68,7 @@ namespace Set
             OnPropertyChanged("tenButtonSelected");
             OnPropertyChanged("elevenButtonSelected");
         }
+
         #endregion
 
         #region Button Selected Properties
@@ -401,6 +405,27 @@ namespace Set
             }
         }
 
+        public void UpdateFoundSet()
+        {
+            OnPropertyChanged("firstCardFoundSetImage");
+            OnPropertyChanged("secondCardFoundSetImage");
+            OnPropertyChanged("thirdCardFoundSetImage");
+        }
+
+        public string firstCardFoundSetImage
+        {
+            get { return gameLogic.LastFoundSet == null ? "Kein Set gefunden" : gameLogic.LastFoundSet[0].ImageSource; }
+        }
+
+        public string secondCardFoundSetImage
+        {
+            get { return gameLogic.LastFoundSet == null ? "Kein Set gefunden" : gameLogic.LastFoundSet[1].ImageSource; }
+        }
+        
+        public string thirdCardFoundSetImage
+        {
+            get { return gameLogic.LastFoundSet == null ? "Kein Set gefunden" : gameLogic.LastFoundSet[2].ImageSource; }
+        }
 
 
         #endregion
@@ -456,6 +481,16 @@ namespace Set
         public void UpdateNumberOfPossibleSets()
         {
             OnPropertyChanged("numberOfPossibleSets");
+        }
+
+        public void UpdateFoundSets()
+        {
+            OnPropertyChanged("FoundSets");
+        }
+
+        public string FoundSets
+        {
+            get { return "Schon " +gameLogic.FoundSets.ToString()+ " Sets gefunden!"; }
         }
         #endregion
 

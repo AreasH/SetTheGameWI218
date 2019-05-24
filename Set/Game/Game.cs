@@ -18,12 +18,13 @@ namespace Set
         private string gameMode;
         List<Card> AllCards;  //Includes really all Cards possible, even if not used in this game instance
         List<Card> Playset; //Includes only the 81 Selected Cards that are used for this game instance
-        List<Card> foundSets; // Includes all Cards that were found to be a set (found by the player)
+        List<Card> lastFoundSet; // Includes all Cards that were found to be a set (found by the player)
         List<Card> removedCards; //All Cards that were removed due to the player not being able to find a set
         List<Card> setCards; //The twelve cards that are actually up for finding a set inside them.
         List<Card> selectedCards; //The cards selected by the player -- not allowed to be more than 3.
         int NumberOfPossibleSets;
         int CountSelectedCards = 0;
+        int foundSets;
         DispatcherTimer timer; //timer displaying the time passed by since the game was started (in seconds). 
         int time = 0;
 
@@ -31,7 +32,8 @@ namespace Set
 
         public List<Card> AllCards1 { get => AllCards; set => AllCards = value; }
         public List<Card> Playset1 { get => Playset; set => Playset = value; }
-        public List<Card> FoundSets { get => foundSets; set => foundSets = value; }
+        public int FoundSets { get => foundSets; set => foundSets = value; }
+        public List<Card> LastFoundSet { get => lastFoundSet; set => lastFoundSet = value; }
         public List<Card> RemovedCards { get => removedCards; set => removedCards = value; }
         public List<Card> SetCards { get => setCards; set => setCards = value; }
         public List<Card> SelectedCards { get => selectedCards; set => selectedCards = value; }
@@ -48,28 +50,35 @@ namespace Set
             }
         }
 
+
         public Game(GameViewModel g, Object options)
         {
             _gameViewModel = g;
             this.options = (Options) options;
             StartNewGame();
+            initializeTimer();
+            timer.Start();
         }
          
         public void StartNewGame()
         {
             gameMode = options.SelectedGameMode;
+            
             initalizeAllCards();
             generatePlaySet();
+            FoundSets = 0;
             SetCards = null;
+            LastFoundSet = null;
             refreshSetCards();
             setImageSource();
-            initializeTimer();
-            timer.Start();
+            Time = 0;
+
         }
 
         public void refreshSetCards()
         {
-            if(SetCards == null)
+            //This one is used at every refresh of the game
+            if(SetCards == null || SetCards.Count() == 0)
             {
                 Random rnd = new Random();
                 int i = rnd.Next(Playset1.Count);
@@ -85,7 +94,8 @@ namespace Set
                     }
                 }
             }
-            for(int i=0; i < SetCards.Count(); i++)
+            //This one is used while the game runs (when user found a set)
+            for (int i=0; i < SetCards.Count(); i++)
             {
                 if(SetCards[i].Selected)
                 {
@@ -96,7 +106,7 @@ namespace Set
                     Playset1.RemoveAt(r);
                 }
             }
-            
+            _gameViewModel.UpdateFoundSets();
             _gameViewModel.UpdateCardsLeft();
             _gameViewModel.UpdateNumberOfPossibleSets();
             setImageSource();
@@ -348,13 +358,26 @@ namespace Set
                 SelectedCards.Add(SetCards[i]);
                 SetCards[i].Selected = true;
                 _gameViewModel.RefreshSelection();
-                if (SelectedCards.Count == 3)
+                if (SelectedCards.Count >= 3)
                 {
-                    if(IsASet(SelectedCards[0], SelectedCards[1], SelectedCards[2]))
+                    if(IsASet(SelectedCards[0], SelectedCards[1], SelectedCards[2])) //Found A Set! Yay
                     {
+
+                        FoundSets++;
+                            if(LastFoundSet == null)
+                            {
+                                LastFoundSet = new List<Card>();
+                            }
+                            LastFoundSet.Clear();
+                            LastFoundSet.AddRange(SelectedCards);
+                            _gameViewModel.UpdateFoundSet();
                         refreshSetCards();
                     }
                     SelectedCards.Clear();
+                    foreach (Card card in SetCards)
+                    {
+                        card.Selected = false;
+                    }
                     foreach (Card card in Playset1)
                     {
                         card.Selected = false;
@@ -412,7 +435,12 @@ namespace Set
 
 
             }
-
+            if(foundSets.Count()==0)
+            {
+                Playset1.AddRange(SetCards);
+                SetCards.Clear();
+                refreshSetCards();
+            }
             return foundSets.Count();
 
         }
@@ -497,12 +525,17 @@ namespace Set
 
         #endregion
 
+        public void EndGame()
+        {
+
+        }
+
         public void initializeTimer() {
 
             timer = null;
-            timer = new DispatcherTimer();
+            timer = new DispatcherTimer(DispatcherPriority.Send);
             timer.Tick += new EventHandler(timer_tick);
-            timer.Interval = new TimeSpan (0,0,1);
+            timer.Interval = TimeSpan.FromSeconds(1);
 
         }
 
