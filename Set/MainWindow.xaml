@@ -21,6 +21,8 @@
             <local:RulesView/>
         </DataTemplate>
 
+        
+            
       
     </Window.Resources>
 

@@ -89,32 +89,39 @@ namespace Set
             PlaySetEmptyCount = 0;
             SetCards = null;
             LastFoundSet = null;
-            refreshSetCards();
-            setImageSource();
+            initializeSetCards();
             TimeSeconds = gameMode == "Normal" ? 0 : 300;
 
+        }
+
+        public void initializeSetCards()
+        {
+            if (SetCards == null)
+            {
+                Random rnd = new Random();
+                int i = rnd.Next(Playset1.Count);
+                SetCards = new List<Card>();
+                while (SetCards.Count < 12)
+                {
+
+                    i = rnd.Next(Playset1.Count);
+                    if (!SetCards.Contains(Playset1[i]))
+                    {
+                        SetCards.Add(Playset1[i]);
+                        Playset1.RemoveAt(i);
+                    }
+                }
+            }
+            _gameViewModel.UpdateFoundSets();
+            _gameViewModel.UpdateCardsLeft();
+            _gameViewModel.UpdateNumberOfPossibleSets();
+            setImageSource();
         }
 
         public void refreshSetCards()
         {
                         
-                    //This one is used at every refresh of the game
-                    if(SetCards == null || SetCards.Count() == 0)
-                    {
-                        Random rnd = new Random();
-                        int i = rnd.Next(Playset1.Count);
-                        SetCards = new List<Card>();
-                        while (SetCards.Count < 12)
-                        {
-
-                            i = rnd.Next(Playset1.Count);
-                            if (!SetCards.Contains(Playset1[i]))
-                            {
-                                SetCards.Add(Playset1[i]);
-                                Playset1.RemoveAt(i);
-                            }
-                        }
-                    }
+                    
                     //This one is used while the game runs (when user found a set)
                     for (int i=0; i < SetCards.Count(); i++)
                     {
@@ -392,7 +399,7 @@ namespace Set
             {
                 SelectedCards = new List<Card>();
             }
-            if(SelectedCards.Contains(SetCards[i]))
+            if(SelectedCards.Contains(SetCards[i])) //Remove the card from Selected Cards
             {
                 SelectedCards.Remove(SetCards[i]);
                 SetCards[i].Selected = false;
@@ -400,7 +407,7 @@ namespace Set
             }
             else
             {
-                SelectedCards.Add(SetCards[i]);
+                SelectedCards.Add(SetCards[i]); //Add the card.
                 SetCards[i].Selected = true;
                 _gameViewModel.RefreshSelection();
                 if (SelectedCards.Count >= 3)
