@@ -42,8 +42,8 @@ namespace Set
         #endregion
 
         #region ButtonSelectedStrings
-        string hidden = "White";
-        string visible = "SkyBlue";
+        string hidden = "LightGray";
+        string visible = "Orange";
         #endregion
 
         #region Methods
@@ -363,7 +363,7 @@ namespace Set
                 if (eightButtonImageSource != value)
                 {
                     _eightButtonImageSource = value;
-                    OnPropertyChanged("sevenButtonImageSource");
+                    OnPropertyChanged("eightButtonImageSource");
                 }
             }
         }

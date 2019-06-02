@@ -7,8 +7,16 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       >
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
 
-    <Grid Background="MediumSeaGreen">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="152*"/>
             <ColumnDefinition Width="437*"/>
@@ -34,7 +42,7 @@
 
 
 
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Background="White" 
                     BorderBrush="{Binding zeroButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding zeroButton}">
                 <StackPanel Orientation="Horizontal" >
                     <Grid>
@@ -43,7 +51,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Background="White" 
                   BorderBrush="{Binding oneButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding oneButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -52,7 +60,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="0" Background="White" 
                   BorderBrush="{Binding twoButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding twoButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -61,8 +69,8 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Background="White" 
-                  BorderBrush="{Binding threeButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding threeButton}">
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" BorderThickness="4"
+                  BorderBrush="{Binding threeButtonSelected, UpdateSourceTrigger=PropertyChanged}" Command="{Binding threeButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
                         <Image Source="{Binding threeButtonImageSource,Mode=TwoWay,
@@ -70,7 +78,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Background="White" 
                   BorderBrush="{Binding fourButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding fourButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -79,7 +87,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1" Background="White" 
                   BorderBrush="{Binding fiveButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding fiveButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -88,7 +96,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="2" Background="White" 
                   BorderBrush="{Binding sixButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding sixButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -97,7 +105,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2" Background="White" 
                   BorderBrush="{Binding sevenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding sevenButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -106,7 +114,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="2" Background="White" 
                   BorderBrush="{Binding eightButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding eightButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -115,7 +123,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Background="White" 
                   BorderBrush="{Binding nineButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding nineButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -124,7 +132,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3" Background="White" 
                   BorderBrush="{Binding tenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding tenButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -133,7 +141,7 @@
                     </Grid>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3" Background="White" 
+            <Button Margin="5,5,5,5" Style="{StaticResource Cards}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="3" Background="White" 
                   BorderBrush="{Binding elevenButtonSelected, UpdateSourceTrigger=PropertyChanged}" BorderThickness="4" Command="{Binding elevenButton}">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -143,7 +151,7 @@
                 </StackPanel>
             </Button>
         </Grid>
-        <Button Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
+        <Button Style="{StaticResource SquareCorner}" Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
         <TextBlock Grid.Row="1" VerticalAlignment="Top" Margin="0,50,0,0" Text="{Binding FoundSets}" FontSize="14" Background="White" MinHeight="40"/>
         <Grid Grid.Row="1" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
@@ -151,27 +159,27 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Border BorderBrush="MediumSeaGreen" Grid.Column="0" BorderThickness="3" >
+            <Border BorderBrush="White" Grid.Column="0" BorderThickness="3" >
                 <Image  Source="{Binding firstCardFoundSetImage}" Stretch="Uniform" />
             </Border>
-            <Border BorderBrush="MediumSeaGreen" Grid.Column="1" BorderThickness="3" >
+            <Border BorderBrush="White" Grid.Column="1" BorderThickness="3" >
                 <Image Source="{Binding secondCardFoundSetImage}" Stretch="Uniform"/>
             </Border>
-            <Border BorderBrush="MediumSeaGreen" Grid.Column="2" BorderThickness="3" >
+            <Border BorderBrush="White" Grid.Column="2" BorderThickness="3" >
                 <Image  Source="{Binding thirdCardFoundSetImage}"  Stretch="Uniform"/>
             </Border>
         </Grid>
         <Border BorderThickness="4 4 0 4" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="82" Grid.Column="2" Grid.Row="2">
-            <TextBlock Text="Sets möglich:" TextWrapping="Wrap" Foreground="White"/>
+            <TextBlock Text="Sets möglich:" TextWrapping="Wrap" Foreground="Black"/>
         </Border>
         <Border BorderThickness="0 4 4 4" BorderBrush="Black" HorizontalAlignment="Right" VerticalAlignment="Top" Height="92" Width="82" Grid.Column="2" Grid.Row="2">
-            <TextBlock Text="{Binding numberOfPossibleSets}" TextWrapping="Wrap" Foreground="White"/>
+            <TextBlock Text="{Binding numberOfPossibleSets}" TextWrapping="Wrap" Foreground="Black"/>
         </Border>
         <Border BorderThickness="4 4 0 4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" Width="82" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <TextBlock Background="MediumSeaGreen" Text="Karten übrig:" TextWrapping="Wrap" Foreground="White"/>
+            <TextBlock Background="White" Text="Karten übrig:" TextWrapping="Wrap" Foreground="Black"/>
         </Border>
         <Border BorderThickness="0 4 4 4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" Width="82" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <TextBlock Background="MediumSeaGreen" TextWrapping="Wrap" Foreground="White"
+            <TextBlock Background="White" TextWrapping="Wrap" Foreground="Black"
             Text="{Binding CardsLeft}"   
             />
         </Border>
@@ -183,10 +191,10 @@
                 <ColumnDefinition Width="107*"/>
             </Grid.ColumnDefinitions>
             <Border BorderThickness="4 4 0 4" BorderBrush="Black" Height="30" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Text="Zeit:" TextWrapping="Wrap" Width="144"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Text="Zeit:" TextWrapping="Wrap" Width="144"/>
             </Border>
             <Border BorderThickness="0 4 4 4" BorderBrush="Black" Height="30" Grid.Column="2" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right">
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Text="{Binding Time}" TextWrapping="Wrap" Width="144"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Text="{Binding Time}" TextWrapping="Wrap" Width="144"/>
             </Border>
         </Grid>
     </Grid>

@@ -7,10 +7,18 @@
     mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       >
-    
-  
 
-        <Grid Background="MediumSeaGreen">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <Grid Background="White">
+       
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="34*"/>
@@ -29,15 +37,16 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button  Content="Neues Spiel" Grid.Row="0" Command="{Binding StartNewGameCommand}" Height="45" Width="150"  />
-            <Button  Content="Optionen" Grid.Row="1" Command="{Binding OptionsCommand}" Height="45" Width="150"/>
-            <Button  Content="Regeln" Grid.Row="2" Command="{Binding RulesCommand}" Height="45" Width="150"/>
-            <Button  Content="Spiel verlassen" Grid.Row="3" Command="{Binding ExitCommand}" Height="45" Width="150"/>
-        </Grid>
-    
-    
-    
-    
 
-  </Grid>
+            <Button  Style="{StaticResource SquareCorner}" Content="Neues Spiel" Grid.Row="0" Command="{Binding StartNewGameCommand}" Height="45" Width="150"  />
+            <Button  Style="{StaticResource SquareCorner}" Content="Optionen" Grid.Row="1" Command="{Binding OptionsCommand}" Height="45" Width="150" />
+            <Button  Style="{StaticResource SquareCorner}" Content="Regeln" Grid.Row="2" Command="{Binding RulesCommand}" Height="45" Width="150"/>
+            <Button  Style="{StaticResource SquareCorner}" Content="Spiel verlassen" Grid.Row="3" Command="{Binding ExitCommand}" Height="45" Width="150"/>
+        </Grid>
+
+
+
+
+
+    </Grid>
 </UserControl>

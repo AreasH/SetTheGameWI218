@@ -90,45 +90,47 @@ namespace Set
             SetCards = null;
             LastFoundSet = null;
             initializeSetCards();
+            setImageSource();
             TimeSeconds = gameMode == "Normal" ? 0 : 300;
 
         }
 
-        public void initializeSetCards()
-        {
-            if (SetCards == null)
-            {
-                Random rnd = new Random();
-                int i = rnd.Next(Playset1.Count);
-                SetCards = new List<Card>();
-                while (SetCards.Count < 12)
-                {
 
-                    i = rnd.Next(Playset1.Count);
-                    if (!SetCards.Contains(Playset1[i]))
-                    {
-                        SetCards.Add(Playset1[i]);
-                        Playset1.RemoveAt(i);
-                    }
+        public void initializeSetCards()
+    {
+        if (SetCards == null)
+        {
+            Random rnd = new Random();
+            int i = rnd.Next(Playset1.Count);
+            SetCards = new List<Card>();
+            while (SetCards.Count < 12)
+            {
+
+                i = rnd.Next(Playset1.Count);
+                if (!SetCards.Contains(Playset1[i]))
+                {
+                    SetCards.Add(Playset1[i]);
+                    Playset1.RemoveAt(i);
                 }
             }
-            _gameViewModel.UpdateFoundSets();
-            _gameViewModel.UpdateCardsLeft();
-            _gameViewModel.UpdateNumberOfPossibleSets();
-            setImageSource();
         }
+        _gameViewModel.UpdateFoundSets();
+        _gameViewModel.UpdateCardsLeft();
+        _gameViewModel.UpdateNumberOfPossibleSets();
+        setImageSource();
+    }
 
         public void refreshSetCards()
         {
-                        
-                    
-                    //This one is used while the game runs (when user found a set)
-                    for (int i=0; i < SetCards.Count(); i++)
+
+            Random rnd = new Random();
+            int r = rnd.Next(Playset1.Count);
+            //This one is used while the game runs (when user found a set)
+            for (int i=0; i < SetCards.Count(); i++)
                     {
-                        if(SetCards[i].Selected)
+                        if(SetCards[i].Selected )
                         {
-                            Random rnd = new Random();
-                            int r = rnd.Next(Playset1.Count);
+                            r = rnd.Next(Playset1.Count);
                             SetCards.RemoveAt(i);
                             SetCards.Insert(i,Playset1[r]);
                             Playset1.RemoveAt(r);
@@ -532,7 +534,10 @@ namespace Set
         public Boolean IsASet(Card first, Card second, Card third)  //Check if Selected Cards are a Set using the methods below
         {
 
-
+            if(first.Shape== "block" || second.Shape == "block" || third.Shape == "block")
+            {
+                return false;
+            }
             if ((StringAllSame(first.Color, second.Color, third.Color) || StringAllDifferent(first.Color, second.Color, third.Color)) && (StringAllSame(first.Filling, second.Filling, third.Filling) || StringAllDifferent(first.Filling, second.Filling, third.Filling)) && (StringAllSame(first.NumberOfObjects, second.NumberOfObjects, third.NumberOfObjects) || StringAllDifferent(first.NumberOfObjects, second.NumberOfObjects, third.NumberOfObjects)) && (StringAllSame(first.Shape, second.Shape, third.Shape) || StringAllDifferent(first.Shape, second.Shape, third.Shape)))
             {
                 return true;

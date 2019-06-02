@@ -6,7 +6,16 @@
              xmlns:local="clr-namespace:Set"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="MediumSeaGreen">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="34*"/>
@@ -38,28 +47,28 @@
                                       ItemsSource="{Binding ColorSource, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding FirstSelectedColor,
                                                               UpdateSourceTrigger=PropertyChanged}" 
-                      HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+                      HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="100"/>
                 <ComboBox Grid.Row="0" Grid.Column="1"
                                       ItemsSource="{Binding ColorSource, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding SecondSelectedColor,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}" 
-                      HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+                      HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="100"/>
                 <ComboBox Grid.Row="0"  Grid.Column="2"
                                       ItemsSource="{Binding ColorSource, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding ThirdSelectedColor,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}" 
-                      HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
-                <Button Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Farben speichern" IsEnabled="{Binding SaveColorsCommandVisibility, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SaveColorsCommand}"/>
+                      HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="100"/>
+                <Button Style="{StaticResource SquareCorner}" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Farben speichern" IsEnabled="{Binding SaveColorsCommandVisibility, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SaveColorsCommand}"/>
                 <ComboBox Grid.Row="1" Grid.Column="0"
                                       ItemsSource="{Binding GameModes, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding SelectedGameMode,
                                                               UpdateSourceTrigger=PropertyChanged}" 
-                      HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+                      HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="100"/>
             </Grid>
         </Grid>
-        <Button Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
+        <Button Style="{StaticResource SquareCorner}" Margin="1,1,1,1" Content="Zurück zum Menü" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MaxHeight="50" MaxWidth="164" Command="{Binding ChangeToMenuShortcut}"/>
         
     </Grid>
 </UserControl>

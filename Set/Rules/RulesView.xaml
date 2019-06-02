@@ -6,7 +6,16 @@
              xmlns:local="clr-namespace:Set"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="MediumSeaGreen">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="152*"/>
             <ColumnDefinition Width="428*"/>
@@ -17,8 +26,8 @@
             <RowDefinition Height="798*"/>
             <RowDefinition Height="83*"/>
         </Grid.RowDefinitions>
-        <Button Content="Zurück zum Menü" HorizontalAlignment="Left" VerticalAlignment="Top" Height="54" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
-        <TextBlock Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
+        <Button Margin="1,1,1,1" Style="{StaticResource SquareCorner}" Content="Zurück zum Menü" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Command="{Binding ChangeToMenuShortcut}"/>
+        <TextBlock Foreground="#565656" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
             Was ist ein Set? <LineBreak/>
             Man kann verschiedene Varianten dieses Spiels spielen. <LineBreak/>
             Sie alle drehen sich aber um das namensgebende Set. Ein Set besteht aus drei Karten, <LineBreak/>
