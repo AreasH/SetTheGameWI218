@@ -40,7 +40,8 @@ namespace Set
 
             GameModes = new List<string>();
             GameModes.Add("Normal");
-            GameModes.Add("Gegen die Zeit (5min)");
+            GameModes.Add("Gegen die Zeit (5 min)");
+            GameModes.Add("Hardcore");
             SelectedGameMode = GameModes[0];
 
         }

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Set"   
     mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
       >
 
     <UserControl.Resources>
@@ -17,7 +17,7 @@
     </UserControl.Resources>
 
 
-    <Grid Background="White">
+    <Grid Background="LightBlue">
        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25*"/>
@@ -32,16 +32,18 @@
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" MinHeight="100" MaxHeight="200"/>
+                <RowDefinition Height="Auto" MinHeight="100" MaxHeight="200"/>
+                <RowDefinition Height="Auto" MinHeight="100" MaxHeight="200"/>
+                <RowDefinition Height="Auto" MinHeight="100" MaxHeight="200"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
 
-            <Button  Style="{StaticResource SquareCorner}" Content="Neues Spiel" Grid.Row="0" Command="{Binding StartNewGameCommand}" Height="45" Width="150"  />
-            <Button  Style="{StaticResource SquareCorner}" Content="Optionen" Grid.Row="1" Command="{Binding OptionsCommand}" Height="45" Width="150" />
-            <Button  Style="{StaticResource SquareCorner}" Content="Regeln" Grid.Row="2" Command="{Binding RulesCommand}" Height="45" Width="150"/>
-            <Button  Style="{StaticResource SquareCorner}" Content="Spiel verlassen" Grid.Row="3" Command="{Binding ExitCommand}" Height="45" Width="150"/>
+            <Button  Style="{StaticResource SquareCorner}" Content="Neues Spiel" Grid.Row="1" Command="{Binding StartNewGameCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,5,5,5" MaxWidth="300" />
+            <Button  Style="{StaticResource SquareCorner}" Content="Optionen" Grid.Row="2" Command="{Binding OptionsCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,5,5,5" MaxWidth="300" />
+            <Button  Style="{StaticResource SquareCorner}" Content="Regeln" Grid.Row="3" Command="{Binding RulesCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,5,5,5" MaxWidth="300"/>
+            <Button  Style="{StaticResource SquareCorner}" Content="Spiel verlassen" Grid.Row="4" Command="{Binding ExitCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,5,5,5" MaxWidth="300"/>
         </Grid>
 
 

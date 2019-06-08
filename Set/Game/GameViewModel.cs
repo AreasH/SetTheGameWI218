@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -42,7 +43,7 @@ namespace Set
         #endregion
 
         #region ButtonSelectedStrings
-        string hidden = "LightGray";
+        string hidden = "White";
         string visible = "Orange";
         #endregion
 
@@ -436,6 +437,8 @@ namespace Set
         public string Name { get => name; }
 
         public Object Data { get { return gameLogic; } }
+
+        
         #endregion
 
         #region ToMenu
@@ -443,13 +446,14 @@ namespace Set
         {
             get
             {
-                return new DelegateCommand(p => ChangeToMenu());
+                return new DelegateCommand(p => ChangeToMenu("Der Spieler wollte zurück zum Menü."));
             }
         }
 
-        public void ChangeToMenu()
+        public void ChangeToMenu(string reason)
         {
-            messageService.ShowNotification(gameLogic.FoundSets.ToString());
+            gameLogic.GameMode = "Normal";
+            messageService.ShowNotification(reason + gameLogic.FoundSets.ToString());
             mwvm.ChangePageTo("MenuViewModel");
         }
         #endregion
@@ -472,7 +476,7 @@ namespace Set
 
         public string CardsLeft
         {
-            get { return "Noch " + gameLogic.Playset1.Count().ToString() + " Karten von 81 verbleibend"; }
+            get { return gameLogic.PlaySetCountFake().ToString() + " / 81"; }
         }
 
 
@@ -493,10 +497,77 @@ namespace Set
 
         public string FoundSets
         {
-            get { return "Schon " +gameLogic.FoundSets.ToString()+ " Sets gefunden!"; }
+            get { return "Schon " + gameLogic.FoundSets.ToString() + " Sets gefunden!"; }
         }
 
-        
+        public DelegateCommand GodMode
+        {
+            get
+            {
+                return new DelegateCommand(p => FindSet());
+            }
+        }
+
+        public void FindSet()
+        {
+            string set = gameLogic.FoundSetsList.First();
+            if(!set.Equals(string.Empty))
+            {
+                String[] stringArray = set.Split(new Char[] { '_' });
+                string first = stringArray[0];
+                string second = stringArray[1];
+                string third = stringArray[2];
+
+                PressButton(first);
+                PressButton(second);
+                PressButton(third);
+            }
+        }
+
+        public void PressButton(string index)
+        {
+            int x = Int32.Parse(index);
+            switch (x)
+            {
+                case 0:
+                    gameLogic.CardSelected(0);
+                    break;
+                case 1:
+                    gameLogic.CardSelected(1);
+                    break;
+                case 2:
+                    gameLogic.CardSelected(2);
+                    break;
+                case 3:
+                    gameLogic.CardSelected(3);
+                    break;
+                case 4:
+                    gameLogic.CardSelected(4);
+                    break;
+                case 5:
+                    gameLogic.CardSelected(5);
+                    break;
+                case 6:
+                    gameLogic.CardSelected(6);
+                    break;
+                case 7:
+                    gameLogic.CardSelected(7);
+                    break;
+                case 8:
+                    gameLogic.CardSelected(8);
+                    break;
+                case 9:
+                    gameLogic.CardSelected(9);
+                    break;
+                case 10:
+                    gameLogic.CardSelected(10);
+                    break;
+                case 11:
+                    gameLogic.CardSelected(11);
+                    break;
+                
+            }
+        }
         #endregion
 
 

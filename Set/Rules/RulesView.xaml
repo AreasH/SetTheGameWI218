@@ -26,7 +26,7 @@
             <RowDefinition Height="798*"/>
             <RowDefinition Height="83*"/>
         </Grid.RowDefinitions>
-        <Button Margin="1,1,1,1" Style="{StaticResource SquareCorner}" Content="Zurück zum Menü" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Command="{Binding ChangeToMenuShortcut}"/>
+        <Button  Style="{StaticResource SquareCorner}" Content="Zurück zum Menü" Margin="30,5,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120" Command="{Binding ChangeToMenuShortcut}"/>
         <TextBlock Foreground="#565656" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
             Was ist ein Set? <LineBreak/>
             Man kann verschiedene Varianten dieses Spiels spielen. <LineBreak/>

@@ -84,7 +84,7 @@
                         <Border x:Name="border" CornerRadius="2"  BorderThickness="2"
                             Background = "White" >
                             <Border.Effect>
-                                <DropShadowEffect Color="LightGray" Opacity="0.5" />
+                                <DropShadowEffect Color="LightSkyBlue" Opacity="0.5" />
                             </Border.Effect>
 
                             <ContentPresenter HorizontalAlignment="Center"
@@ -96,19 +96,22 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation 
-                                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                         From="LightGray" To="Gray" Duration="0:0:1" AutoReverse="True" />
-                                    </Storyboard>
-                                </BeginStoryboard >
-                            </Trigger.EnterActions>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" TargetName="border" Value="LightGray"/>
                         </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation From="White" To="LightGray" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation From="LightGray" To="White" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
                         </Trigger>
@@ -131,7 +134,7 @@
                         <Border x:Name="border" CornerRadius="12"  BorderThickness="2"
                             Background = "White" BorderBrush="{TemplateBinding BorderBrush}">
                             <Border.Effect>
-                                <DropShadowEffect Color="LightGray" Opacity="0.5" />
+                                <DropShadowEffect Color="LightSkyBlue" Opacity="0.5" />
                             </Border.Effect>
 
                             <ContentPresenter HorizontalAlignment="Center"
@@ -140,6 +143,7 @@
                             </ContentPresenter>
                         </Border>
                     </Grid>
+                    
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

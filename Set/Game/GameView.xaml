@@ -16,7 +16,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="White">
+    <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="152*"/>
             <ColumnDefinition Width="437*"/>
@@ -151,38 +151,49 @@
                 </StackPanel>
             </Button>
         </Grid>
-        <Button Style="{StaticResource SquareCorner}" Content="Zurück zum Menü" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="164" Command="{Binding ChangeToMenuShortcut}"/>
-        <TextBlock Grid.Row="1" VerticalAlignment="Top" Margin="0,50,0,0" Text="{Binding FoundSets}" FontSize="14" Background="White" MinHeight="40"/>
-        <Grid Grid.Row="1" VerticalAlignment="Center">
+        <Button Style="{StaticResource SquareCorner}" Content="Zurück zum Menü" Margin="5,5,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120" Command="{Binding ChangeToMenuShortcut}"/>
+        
+        <Grid  Grid.Row="1" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Border BorderBrush="White" Grid.Column="0" BorderThickness="3" >
-                <Image  Source="{Binding firstCardFoundSetImage}" Stretch="Uniform" />
-            </Border>
-            <Border BorderBrush="White" Grid.Column="1" BorderThickness="3" >
-                <Image Source="{Binding secondCardFoundSetImage}" Stretch="Uniform"/>
-            </Border>
-            <Border BorderBrush="White" Grid.Column="2" BorderThickness="3" >
-                <Image  Source="{Binding thirdCardFoundSetImage}"  Stretch="Uniform"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0,0,0,0" Text="{Binding FoundSets}" FontSize="15"  MinHeight="40"/>
+            <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" BorderThickness="1" CornerRadius="5"  BorderBrush="Gray" >
+                <Grid Background="White" MinWidth="150" MinHeight="40" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="{Binding firstCardFoundSetImage}" Stretch="Uniform" />
+                    <Image Grid.Column="1" Source="{Binding secondCardFoundSetImage}" Stretch="Uniform"/>
+                    <Image Grid.Column="2"  Source="{Binding thirdCardFoundSetImage}"  Stretch="Uniform"/>
+                </Grid>
             </Border>
         </Grid>
-        <Border BorderThickness="4 4 0 4" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="82" Grid.Column="2" Grid.Row="2">
-            <TextBlock Text="Sets möglich:" TextWrapping="Wrap" Foreground="Black"/>
+
+        <Border BorderThickness="2" CornerRadius="4" BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="92" Grid.Column="2" Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Sets möglich:   " FontSize="15" TextWrapping="Wrap" Foreground="Black"/>
+                <TextBlock Text="{Binding numberOfPossibleSets}"  FontSize="15" TextWrapping="Wrap" Foreground="Black"/>
+            </StackPanel>
         </Border>
-        <Border BorderThickness="0 4 4 4" BorderBrush="Black" HorizontalAlignment="Right" VerticalAlignment="Top" Height="92" Width="82" Grid.Column="2" Grid.Row="2">
-            <TextBlock Text="{Binding numberOfPossibleSets}" TextWrapping="Wrap" Foreground="Black"/>
+        <Border BorderThickness="2" CornerRadius="4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Text="Karten übrig:   "  FontSize="15" TextWrapping="Wrap" Foreground="Black"/>
+                <TextBlock  TextWrapping="Wrap" FontSize="15" Foreground="Black"
+                           Text="{Binding CardsLeft}" />
+            </StackPanel>
         </Border>
-        <Border BorderThickness="4 4 0 4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" Width="82" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <TextBlock Background="White" Text="Karten übrig:" TextWrapping="Wrap" Foreground="Black"/>
-        </Border>
-        <Border BorderThickness="0 4 4 4" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Height="100" Width="82" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <TextBlock Background="White" TextWrapping="Wrap" Foreground="Black"
-            Text="{Binding CardsLeft}"   
-            />
-        </Border>
+        
         <Grid Grid.Column="1"  Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="107*"/>
@@ -190,12 +201,14 @@
                 <ColumnDefinition Width="128*"/>
                 <ColumnDefinition Width="107*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderThickness="4 4 0 4" BorderBrush="Black" Height="30" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Text="Zeit:" TextWrapping="Wrap" Width="144"/>
+            <Border BorderThickness="2" CornerRadius="4" BorderBrush="Black" Height="30" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch"  Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontSize="15" Text="Zeit:" TextWrapping="Wrap" Width="144"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontSize="15" Text="{Binding Time}" TextWrapping="Wrap" Width="144" />
+                </StackPanel>
             </Border>
-            <Border BorderThickness="0 4 4 4" BorderBrush="Black" Height="30" Grid.Column="2" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right">
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Text="{Binding Time}" TextWrapping="Wrap" Width="144"/>
-            </Border>
+            
         </Grid>
+        <Button Content="GodMode" Grid.Column="1" HorizontalAlignment="Left" Margin="168,40,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Command="{Binding GodMode}"/>
     </Grid>
 </UserControl>

@@ -9,9 +9,11 @@ namespace Set
 {
         public class MsgBoxService : IMsgBoxService
         {
-            public void ShowNotification(string message)
+            public void ShowNotification(string information)
             {
-                MessageBox.Show("Du hast dieses Spiel "+ message + " Sets gefunden.", "Spiel beendet", MessageBoxButton.OK, MessageBoxImage.Information);
+                string setCount = information.Substring(information.IndexOf('.')+1);
+                string reason = information.Remove(information.IndexOf('.') + 1);
+                MessageBox.Show("Du hast dieses Spiel "+ setCount + " Sets gefunden.", "Spiel beendet: " + reason, MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
         }
