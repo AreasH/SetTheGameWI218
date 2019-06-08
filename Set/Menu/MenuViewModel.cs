@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-
 namespace Set
 {   
     /// <summary>
@@ -42,6 +43,8 @@ namespace Set
         {
             get { return new DelegateCommand(param => ExitProgram()); }
         }
+
+        public string IconSource {get {return Path.Combine(Environment.CurrentDirectory,"/Image.Set.ico");}}
 
         public string Name { get => name;}
 
