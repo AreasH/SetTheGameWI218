@@ -14,7 +14,11 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding ChangeToMenuShortcut}"  ></KeyBinding>
+    </UserControl.InputBindings>
+
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="152*"/>

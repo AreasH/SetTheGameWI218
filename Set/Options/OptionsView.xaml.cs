@@ -23,6 +23,8 @@ namespace Set
         public OptionsView()
         {
             InitializeComponent();
+            Focusable = true;
+            Loaded += (s, e) => Keyboard.Focus(this);
         }
     }
 }

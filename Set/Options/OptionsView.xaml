@@ -15,6 +15,10 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
+    <UserControl.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding ChangeToMenuShortcut}"  ></KeyBinding>
+    </UserControl.InputBindings>
+
     <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>

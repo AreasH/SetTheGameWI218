@@ -499,7 +499,8 @@ namespace Set
         {
             get { return "Schon " + gameLogic.FoundSets.ToString() + " Sets gefunden!"; }
         }
-
+        #endregion
+        #region GodMode
         public DelegateCommand GodMode
         {
             get
@@ -510,17 +511,21 @@ namespace Set
 
         public void FindSet()
         {
-            string set = gameLogic.FoundSetsList.First();
-            if(!set.Equals(string.Empty))
+            //only works when in Normal Mode.
+            if (gameLogic.GameMode != "Hardcore")
             {
-                String[] stringArray = set.Split(new Char[] { '_' });
-                string first = stringArray[0];
-                string second = stringArray[1];
-                string third = stringArray[2];
+                string set = gameLogic.FoundSetsList.First();
+                if (!set.Equals(string.Empty))
+                {
+                    String[] stringArray = set.Split(new Char[] { '_' });
+                    string first = stringArray[0];
+                    string second = stringArray[1];
+                    string third = stringArray[2];
 
-                PressButton(first);
-                PressButton(second);
-                PressButton(third);
+                    PressButton(first);
+                    PressButton(second);
+                    PressButton(third);
+                }
             }
         }
 

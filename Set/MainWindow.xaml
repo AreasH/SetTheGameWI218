@@ -6,17 +6,17 @@
         Icon="{Binding IconSource}"
         xmlns:local="clr-namespace:Set"
         mc:Ignorable="d"
-        Title="SetTheGame" MinHeight="450" MinWidth="800">
+        Title="SetTheGame" MinHeight="450" MinWidth="800" >
 
     <Window.Resources>
         <DataTemplate  DataType="{x:Type local:MenuViewModel}">
-            <local:MenuView/>
+            <local:MenuView />
         </DataTemplate>
         <DataTemplate  DataType="{x:Type local:GameViewModel}">
-            <local:GameView/>
+            <local:GameView />
         </DataTemplate>
         <DataTemplate  DataType="{x:Type local:OptionsViewModel}">
-            <local:OptionsView/>
+            <local:OptionsView />
         </DataTemplate>
         <DataTemplate  DataType="{x:Type local:RulesViewModel}">
             <local:RulesView/>
@@ -29,12 +29,10 @@
 
     
     
-    <Window.InputBindings>
-        <KeyBinding Key="Esc" Command="{Binding ChangePageToMenuShortcut}"  ></KeyBinding>
-    </Window.InputBindings>
+    
 
     <DockPanel>
-        <ContentControl Content="{Binding CurrentPageViewModel}" />
+        <ContentControl Content="{Binding CurrentPageViewModel}" Focusable="True" />
 
     </DockPanel>
 </Window>

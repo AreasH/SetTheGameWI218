@@ -23,6 +23,8 @@ namespace Set
         public GameView()
         {
             InitializeComponent();
+            Focusable = true;
+            Loaded += (s, e) => Keyboard.Focus(this);
         }
     }
 }

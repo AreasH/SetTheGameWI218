@@ -16,6 +16,9 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
+    <UserControl.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding ExitCommand}"  ></KeyBinding>
+    </UserControl.InputBindings>
 
     <Grid Background="LightBlue">
        

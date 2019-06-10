@@ -536,7 +536,9 @@ namespace Set
                         LastFoundSet.Clear();
                         LastFoundSet.AddRange(SelectedCards);
                         _gameViewModel.UpdateFoundSet();
+                        TimeSeconds = GameMode == "Hardcore" ? 30 : TimeSeconds;
                         refreshSetCards();
+
                     }
                     SelectedCards.Clear();
                     foreach (Card card in SetCards)
@@ -547,7 +549,6 @@ namespace Set
                     {
                         card.Selected = false;
                     }
-                    TimeSeconds = GameMode == "Hardcore" ? 30 : TimeSeconds;
                     _gameViewModel.RefreshSelection();
 
                 }

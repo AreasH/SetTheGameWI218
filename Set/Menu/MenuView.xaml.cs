@@ -23,6 +23,8 @@ namespace Set
         public MenuView()
         {
             InitializeComponent();
+            Focusable = true;
+            Loaded += (s, e) => Keyboard.Focus(this);
         }
     }
 }
