@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 
@@ -527,7 +528,6 @@ namespace Set
                 {
                     if (IsASet(SelectedCards[0], SelectedCards[1], SelectedCards[2])) //Found A Set! Yay
                     {
-
                         FoundSets++;
                         if (LastFoundSet == null)
                         {
