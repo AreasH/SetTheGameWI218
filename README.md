@@ -3,7 +3,7 @@ The game "Set"
 
 Hallo Lukas, <br>
 der Images Ordner muss im selben Verzeichnis wie die .exe liegen. <br>
-Erst dann werde die Karten angezeigt.
+Erst dann werden die Karten angezeigt.
  
 Viele Grüße
 
