@@ -18,7 +18,7 @@
     <UserControl.InputBindings>
         <KeyBinding Key="Esc" Command="{Binding ChangeToMenuShortcut}"  ></KeyBinding>
     </UserControl.InputBindings>
-
+    
     <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="152*"/>
@@ -31,7 +31,13 @@
             <RowDefinition Height="83*"/>
         </Grid.RowDefinitions>
         <Button  Style="{StaticResource SquareCorner}" Content="Zurück zum Menü" Margin="30,5,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
-        <TextBlock Foreground="#565656" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
+
+
+        <Border  BorderBrush="LightGray" BorderThickness="0" Grid.Column="1" Grid.Row="1">
+
+            <TextBlock Foreground="#565656" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="18" 
+                        TextWrapping="Wrap"
+                                            >
             Was ist ein Set? <LineBreak/>
             Man kann verschiedene Varianten dieses Spiels spielen. <LineBreak/>
             Sie alle drehen sich aber um das namensgebende Set. Ein Set besteht aus drei Karten, <LineBreak/>
@@ -54,6 +60,7 @@
     zwei rote gestreifte Schnörkel. <LineBreak/>
 Unterschiedliche Anzahl, gleiche Farbe, unterschiedliche Formen, unterschiedliche <LineBreak/>
             Füllungen.
-        </TextBlock>
+            </TextBlock>
+        </Border>
     </Grid>
 </UserControl>

@@ -1,5 +1,6 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -14,9 +15,12 @@ namespace Set
         private PageViewModel _currentPageViewModel;
         private List<PageViewModel> _pageViewModels;
         private IMsgBoxService messageService;
+        private string _IconSource;
 
         public MainWindowViewModel()
         {
+            _IconSource = Path.Combine(Environment.CurrentDirectory, "Images/GamecardsPic.png");
+
             // Add available pages
             messageService = new MsgBoxService();
             PageViewModels.Add(new MenuViewModel(this));
@@ -31,6 +35,14 @@ namespace Set
 
 
         #region Properties
+        public string IconSource
+        {
+            get
+            {
+                return _IconSource;
+            }
+        }
+
         public string Name
         {
             get {return name; }

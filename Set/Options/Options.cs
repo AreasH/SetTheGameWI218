@@ -65,7 +65,10 @@ namespace Set
         #region Methods
         public void RefreshOptions()
         {
-            
+            FirstSelectedColor = Color[0];
+            SecondSelectedColor = Color[1];
+            ThirdSelectedColor = Color[2];
+            SaveColors();
         }
 
         public bool AreColorsDifferent()
