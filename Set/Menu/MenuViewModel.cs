@@ -44,7 +44,7 @@ namespace Set
             get { return new DelegateCommand(param => ExitProgram()); }
         }
 
-        public string IconSource {get {return Path.Combine(Environment.CurrentDirectory,"/Image.Set.ico");}}
+        public string IconSource {get {return Path.Combine(Environment.CurrentDirectory, "Images/GamecardsPic.png");}}
 
         public string Name { get => name;}
 

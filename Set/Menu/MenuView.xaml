@@ -32,6 +32,9 @@
             <RowDefinition Height="822*"/>
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
+
+        <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Source="{Binding IconSource}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="450" Width="450"/>
+
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -41,7 +44,7 @@
                 <RowDefinition Height="Auto" MinHeight="100" MaxHeight="200"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-
+                
 
             <Button  Style="{StaticResource SquareCorner}" Content="Neues Spiel" Grid.Row="1" Command="{Binding StartNewGameCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,5,5,5" MaxWidth="300" />
             <Button  Style="{StaticResource SquareCorner}" Content="Optionen" Grid.Row="2" Command="{Binding OptionsCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,5,5,5" MaxWidth="300" />

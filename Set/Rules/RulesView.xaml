@@ -22,8 +22,8 @@
     <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="152*"/>
-            <ColumnDefinition Width="428*"/>
-            <ColumnDefinition Width="152*"/>
+            <ColumnDefinition Width="445*"/>
+            <ColumnDefinition Width="135*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="83*"/>
@@ -33,17 +33,19 @@
         <Button  Style="{StaticResource SquareCorner}" Content="Zurück zum Menü" Margin="30,5,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding ChangeToMenuShortcut}"/>
 
 
-        <Border  BorderBrush="LightGray" BorderThickness="0" Grid.Column="1" Grid.Row="1">
-
-            <TextBlock Foreground="#565656" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="18" 
-                        TextWrapping="Wrap"
+        <Border  BorderBrush="White" BorderThickness="1" Grid.Column="1" Grid.Row="1"  Background="White" CornerRadius="3">
+            <Border.Effect>
+                <DropShadowEffect Color="LightSkyBlue" Opacity="0.5" />
+            </Border.Effect>
+            <TextBlock Foreground="#565656" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Dubai Light"
+                        TextWrapping="Wrap" Margin="5,5,5,5"
                                             >
-            Was ist ein Set? <LineBreak/>
+            <Bold> Was ist ein Set ? </Bold> <LineBreak/>
             Man kann verschiedene Varianten dieses Spiels spielen. <LineBreak/>
-            Sie alle drehen sich aber um das namensgebende Set. Ein Set besteht aus drei Karten, <LineBreak/>
-            die für jede Eigenschaft die Bedingung erfüllen müssen, dass alle Karten in dieser <LineBreak/>
-            Eigenschaft übereinstimmen oder dass keine zwei der Karten in dieser Eigenschaft <LineBreak/>
-            übereinstimmen. Das heißt also: <LineBreak/>
+            Sie alle drehen sich aber um das namensgebende Set. Ein Set besteht aus drei Karten,
+            die für jede Eigenschaft die Bedingung erfüllen müssen, dass alle Karten in dieser
+            Eigenschaft übereinstimmen oder dass keine zwei der Karten in dieser Eigenschaft
+            übereinstimmen.<LineBreak/> <Underline> Das heißt also:  </Underline><LineBreak/>
     Alle Karten zeigen dasselbe Symbol oder jede zeigt ein anderes Symbol. <LineBreak/>
     Alle Karten zeigen dieselbe Anzahl an Symbolen oder jede zeigt eine andere Anzahl. <LineBreak/>
     Alle Karten zeigen Symbole derselben Farbe oder jedes Symbol hat eine andere Farbe. <LineBreak/>
@@ -54,11 +56,10 @@
     zwei der drei Karten die gleiche Ausprägung erfährt. <LineBreak/>
     Zieht man zwei beliebige Karten aus dem Spiel, dann gibt es genau eine weitere Karte, <LineBreak/>
     die beide zu einem Set ergänzt. Drei Karten, die ein Set ergeben, könnten zum Beispiel <LineBreak/>
-    sein: <LineBreak/>
+    sein: <LineBreak/> <Italic>
     drei rote gefüllte Ovale, <LineBreak/>
     eine rote leere Raute, <LineBreak/>
-    zwei rote gestreifte Schnörkel. <LineBreak/>
-Unterschiedliche Anzahl, gleiche Farbe, unterschiedliche Formen, unterschiedliche <LineBreak/>
+    zwei rote gestreifte Schnörkel. <LineBreak/> </Italic>-> Unterschiedliche Anzahl, gleiche Farbe, unterschiedliche Formen, unterschiedliche <LineBreak/>
             Füllungen.
             </TextBlock>
         </Border>
